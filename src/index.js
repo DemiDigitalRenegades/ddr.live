@@ -10,18 +10,36 @@ import LandingPage from 'views/LandingPage/LandingPage.js'
 import ProfilePage from 'views/ProfilePage/ProfilePage.js'
 import LoginPage from 'views/LoginPage/LoginPage.js'
 import { Home } from './views/home/Home'
+import Footer from 'components/Footer/Footer.js'
+import Header from 'components/Header/Header'
+import HeaderLinks from 'components/Header/HeaderLinks'
 
 const hist = createBrowserHistory()
 
 ReactDOM.render(
-  <Router history={hist}>
-    <Switch>
-      <Route path='/landing-page' component={LandingPage}/>
-      <Route path='/profile-page' component={ProfilePage}/>
-      <Route path='/login-page' component={LoginPage}/>
-      <Route path='/components' component={Components}/>
-      <Route exact path='/' component={Home}/>
-    </Switch>
-  </Router>,
-  document.getElementById('root'),
+  <div style={{ backgroundColor: 'black', minHeight: '100vh' }}>
+    <Header
+      color='transparent'
+      brand='DDR.Live'
+      fixed
+      rightLinks={<HeaderLinks />}
+      changeColorOnScroll={{
+        height: 400,
+        color: 'dark',
+      }}
+    />
+    <div>
+      <Router history={hist}>
+        <Switch>
+          <Route path='/landing-page' component={LandingPage} />
+          <Route path='/profile-page' component={ProfilePage} />
+          <Route path='/login-page' component={LoginPage} />
+          <Route path='/components' component={Components} />
+          <Route exact path='/' component={Home} />
+        </Switch>
+      </Router>
+    </div>
+    <Footer />
+  </div>,
+  document.getElementById('root')
 )

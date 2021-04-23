@@ -16,8 +16,6 @@ import CardFooter from 'components/Card/CardFooter.js'
 
 import styles from 'assets/jss/material-kit-react/views/landingPageSections/teamStyle.js'
 
-import team3 from 'assets/img/faces/kendall.jpg'
-
 import MeikPic from 'assets/img/faces/Meik.jpg'
 import MarkPic from 'assets/img/faces/Mark.jpg'
 import LydiaPic from 'assets/img/faces/Lydia.jpg'
@@ -25,7 +23,7 @@ import CameronPic from 'assets/img/faces/Cameron.jpg'
 
 const useStyles = makeStyles(styles)
 
-export default function TeamSection() {
+export const TeamSection = () => {
   const classes = useStyles()
   const imageClasses = classNames(
     classes.imgRaised,
@@ -49,11 +47,11 @@ export default function TeamSection() {
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                  Meik is a Software & Solution Engineer from Buffalo NY. He has
-                  always been focused on building communities and used his
-                  technical skills to bridge the gap between artists and fans
-                  during the pandemic through broadcast technology. He is a
-                  musician, a board-gamer, and k-drama binge-watcher.
+                  Meik is a Software & Solution Engineer from Buffalo, NY. He's
+                  been focused on building communities and used his technical
+                  skills to bridge the gap between artists and fans during the
+                  pandemic through broadcast technology. He is a musician, a
+                  board-gamer, and k-drama binge-watcher.
                 </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
@@ -90,12 +88,11 @@ export default function TeamSection() {
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                  You may know him by his DJ name, Subset. By marrying his
-                  passion for music and people with his technical background, he
-                  has carefully crafted a bandwagon of weirdos for his Twitch
-                  streams and his countless renegade sets. Outside of his weekly
-                  shows, Mark cuddles cats, goes paddle-boarding, and plays
-                  Valorant.
+                  You may know him by his DJ name, Subset. Mark marries a
+                  passion for music and people with his technical background.
+                  He's carefully crafted a bandwagon of weirdos for his Twitch
+                  streams through countless renegade sets. Outside of his weekly
+                  shows, Mark cuddles cats, paddle-boards, and plays Valorant.
                 </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
