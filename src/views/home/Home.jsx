@@ -1,10 +1,11 @@
 import React from 'react'
-import { Container, Grid } from '@material-ui/core'
+import { Container, Grid, ThemeProvider } from '@material-ui/core'
 import { AboutUsSection } from './Sections/AboutUsSection'
 import { RecentWorkSection } from './Sections/RecentWorkSection'
 import { ServicesSection } from './Sections/ServicesSection'
 import { ContactSection } from './Sections/ContactSection'
 import { TeamSection } from './Sections/TeamSection'
+import { theme } from './theme'
 
 export const Home = () => {
   return (
@@ -39,7 +40,9 @@ export const Home = () => {
             <TeamSection />
           </Grid>
           <Grid item xs>
-            <ContactSection />
+            <ThemeProvider theme={theme}>
+              <ContactSection />
+            </ThemeProvider>
           </Grid>
         </Grid>
       </Container>
