@@ -1,13 +1,20 @@
-import React from 'react'
-import { Container, Grid, ThemeProvider } from '@material-ui/core'
+import React, { useRef } from 'react'
+import { Container, Grid, IconButton, Hidden } from '@material-ui/core'
 import { AboutUsSection } from './Sections/AboutUsSection'
 import { RecentWorkSection } from './Sections/RecentWorkSection'
 import { ServicesSection } from './Sections/ServicesSection'
 import { ContactSection } from './Sections/ContactSection'
+import { WorkSection } from './Sections/WorkSection'
 import { TeamSection } from './Sections/TeamSection'
-import { theme } from './theme'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 
 export const Home = () => {
+  const servicesRef = useRef(null)
+  const contactRef = useRef(null)
+
+  const executeScroll = () =>
+    servicesRef.current.scrollIntoView({ behavior: 'smooth' })
+
   return (
     <div>
       <div
@@ -24,10 +31,19 @@ export const Home = () => {
             height: '100%',
           }}
         />
+        <Hidden smDown>
+          <br></br>
+          <Grid container justify='center' alignItems='center'>
+            <IconButton color='primary' onClick={executeScroll}>
+              <ExpandMoreIcon /> Scroll <ExpandMoreIcon />
+            </IconButton>
+          </Grid>
+        </Hidden>
       </div>
+
       <Container>
         <Grid container direction='column'>
-          <Grid item xs>
+          <Grid item xs ref={servicesRef}>
             <ServicesSection />
           </Grid>
           <Grid item xs>
@@ -39,10 +55,8 @@ export const Home = () => {
           <Grid item xs>
             <TeamSection />
           </Grid>
-          <Grid item xs>
-            <ThemeProvider theme={theme}>
-              <ContactSection />
-            </ThemeProvider>
+          <Grid item xs ref={contactRef}>
+            <WorkSection />
           </Grid>
         </Grid>
       </Container>

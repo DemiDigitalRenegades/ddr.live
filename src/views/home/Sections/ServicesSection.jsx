@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles'
 
 // @material-ui/icons
 import Chat from '@material-ui/icons/Chat'
-import Fingerprint from '@material-ui/icons/Fingerprint'
 import SettingsInputComponentIcon from '@material-ui/icons/SettingsInputComponent'
 import LocalPlayIcon from '@material-ui/icons/LocalPlay'
 import BrushIcon from '@material-ui/icons/Brush'

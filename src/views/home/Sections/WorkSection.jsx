@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -14,8 +14,31 @@ import styles from 'assets/jss/material-kit-react/views/landingPageSections/work
 
 const useStyles = makeStyles(styles)
 
-export default function WorkSection() {
+export const WorkSection = () => {
   const classes = useStyles()
+
+  const [name, setName] = useState(null)
+  const [email, setEmail] = useState(null)
+  const [message, setMessage] = useState(null)
+
+  const handleSubmit = (e) => {
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        toEmails: ['robbie.didio@gmail.com'],
+        subject: name + ' - ' + email,
+        message: message,
+      }),
+    }
+    console.log(requestOptions)
+    const response = fetch(
+      'https://g9iq74nd1j.execute-api.us-east-2.amazonaws.com/default/contactFormEmailer-ddrLive',
+      requestOptions
+    )
+    console.log(response)
+  }
+
   return (
     <div className={classes.section}>
       <GridContainer justify='center'>
@@ -33,8 +56,12 @@ export default function WorkSection() {
                 <CustomInput
                   labelText='Your Name'
                   id='name'
+                  value={name}
                   formControlProps={{
                     fullWidth: true,
+                  }}
+                  inputProps={{
+                    onChange: (e) => setName(e.target.value),
                   }}
                 />
               </GridItem>
@@ -42,14 +69,19 @@ export default function WorkSection() {
                 <CustomInput
                   labelText='Your Email'
                   id='email'
+                  value={email}
                   formControlProps={{
                     fullWidth: true,
+                  }}
+                  inputProps={{
+                    onChange: (e) => setEmail(e.target.value),
                   }}
                 />
               </GridItem>
               <CustomInput
                 labelText='Your Message'
                 id='message'
+                value={message}
                 formControlProps={{
                   fullWidth: true,
                   className: classes.textArea,
@@ -57,10 +89,13 @@ export default function WorkSection() {
                 inputProps={{
                   multiline: true,
                   rows: 5,
+                  onChange: (e) => setMessage(e.target.value),
                 }}
               />
               <GridItem xs={12} sm={12} md={4}>
-                <Button color='primary'>Send Message</Button>
+                <Button color='primary' onClick={(e) => handleSubmit(e)}>
+                  Send Message
+                </Button>
               </GridItem>
             </GridContainer>
           </form>
