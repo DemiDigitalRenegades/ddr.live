@@ -29,7 +29,7 @@ export const AboutUsSection = () => {
       </Grid>
       <Grid item xs>
         <Grid container justify='center' alignItems='center' spacing={2}>
-          <Grid item xs>
+          <Grid item xs xs={12} sm={12} md={6}>
             <Typography variant='h5' align='center'>
               High-Quality Experience
             </Typography>
@@ -42,7 +42,7 @@ export const AboutUsSection = () => {
               allowing for fans to build community with their favorite artists.
             </Typography>
           </Grid>
-          <Grid item xs>
+          <Grid item xs={12} sm={12} md={6}>
             <Typography variant='h5' align='center'>
               Start Today
             </Typography>

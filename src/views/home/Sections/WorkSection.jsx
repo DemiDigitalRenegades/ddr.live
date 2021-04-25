@@ -22,6 +22,8 @@ export const WorkSection = () => {
   const [message, setMessage] = useState(null)
 
   const handleSubmit = (e) => {
+    const API_ENDPOINT = process.env.REACT_APP_CONTACT_EMAIL_API_ENDPOINT
+
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -31,11 +33,7 @@ export const WorkSection = () => {
         message: message,
       }),
     }
-    console.log(requestOptions)
-    const response = fetch(
-      'https://g9iq74nd1j.execute-api.us-east-2.amazonaws.com/default/contactFormEmailer-ddrLive',
-      requestOptions
-    )
+    const response = fetch(API_ENDPOINT, requestOptions)
     console.log(response)
   }
 

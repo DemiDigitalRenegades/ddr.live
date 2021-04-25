@@ -21,6 +21,7 @@ ReactDOM.render(
     <Header
       color='transparent'
       brand='DDR.Live'
+      dense
       fixed
       rightLinks={<HeaderLinks />}
       changeColorOnScroll={{
