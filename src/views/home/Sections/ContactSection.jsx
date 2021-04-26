@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles'
+import { TextField } from '@material-ui/core'
 
 // @material-ui/icons
 
@@ -17,12 +18,12 @@ const useStyles = makeStyles(styles)
 export const ContactSection = () => {
   const classes = useStyles()
 
-  const [name, setName] = useState(null)
-  const [email, setEmail] = useState(null)
-  const [message, setMessage] = useState(null)
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const handleSubmit = () => {
+    clearForm()
 
     const API_ENDPOINT = process.env.REACT_APP_CONTACT_EMAIL_API_ENDPOINT
 
@@ -49,9 +50,10 @@ export const ContactSection = () => {
   }
 
   const clearForm = () => {
-    setName(null)
-    setEmail(null)
-    setMessage(null)
+    setName('')
+    setEmail('')
+    setMessage('')
+    console.log('clearing inputs')
   }
 
   return (
@@ -65,59 +67,58 @@ export const ContactSection = () => {
             collaboration. We will responde get back to you in a couple of
             hours.
           </h4>
-          <GridContainer>
-            <GridItem xs={12} sm={12} md={6}>
+          <form>
+            <GridContainer>
+              <GridItem xs={12} sm={12} md={6}>
+                <CustomInput
+                  labelText='Your Name'
+                  id='name'
+                  value={name}
+                  formControlProps={{
+                    fullWidth: true,
+                  }}
+                  inputProps={{
+                    required: true,
+                    onChange: (e) => setName(e.target.value),
+                  }}
+                />
+              </GridItem>
+              <GridItem xs={12} sm={12} md={6}>
+                <CustomInput
+                  labelText='Your Email'
+                  id='email'
+                  value={email}
+                  formControlProps={{
+                    fullWidth: true,
+                  }}
+                  inputProps={{
+                    required: true,
+                    onChange: (e) => setEmail(e.target.value),
+                  }}
+                />
+              </GridItem>
               <CustomInput
-                labelText='Your Name'
-                id='name'
+                labelText='Your Message'
+                id='message'
+                value={message}
                 formControlProps={{
                   fullWidth: true,
+                  className: classes.textArea,
                 }}
                 inputProps={{
-                  value: name,
-                  defaultValue: null,
                   required: true,
-                  onChange: (e) => setName(e.target.value),
+                  multiline: true,
+                  rows: 5,
+                  onChange: (e) => setMessage(e.target.value),
                 }}
               />
-            </GridItem>
-            <GridItem xs={12} sm={12} md={6}>
-              <CustomInput
-                labelText='Your Email'
-                id='email'
-                formControlProps={{
-                  fullWidth: true,
-                }}
-                inputProps={{
-                  value: email,
-                  defaultValue: null,
-                  required: true,
-                  onChange: (e) => setEmail(e.target.value),
-                }}
-              />
-            </GridItem>
-            <CustomInput
-              labelText='Your Message'
-              id='message'
-              formControlProps={{
-                fullWidth: true,
-                className: classes.textArea,
-              }}
-              inputProps={{
-                value: message,
-                defaultValue: null,
-                required: true,
-                multiline: true,
-                rows: 5,
-                onChange: (e) => setMessage(e.target.value),
-              }}
-            />
-            <GridItem xs={12} sm={12} md={4}>
-              <Button color='primary' onClick={(e) => handleSubmit(e)}>
-                Send Message
-              </Button>
-            </GridItem>
-          </GridContainer>
+              <GridItem xs={12} sm={12} md={4}>
+                <Button color='primary' onClick={handleSubmit}>
+                  Send Message
+                </Button>
+              </GridItem>
+            </GridContainer>
+          </form>
         </GridItem>
       </GridContainer>
     </div>
