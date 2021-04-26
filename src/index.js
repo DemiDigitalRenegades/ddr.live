@@ -24,10 +24,6 @@ ReactDOM.render(
       dense
       fixed
       rightLinks={<HeaderLinks />}
-      changeColorOnScroll={{
-        height: 400,
-        color: 'dark',
-      }}
     />
     <div>
       <Router history={hist}>

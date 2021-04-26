@@ -1,19 +1,31 @@
 import React, { useState } from 'react'
-import {
-  Grid,
-  Typography,
-  TextField,
-  Paper,
-  FormControl,
-  Button,
-} from '@material-ui/core'
+// @material-ui/core components
+import { makeStyles } from '@material-ui/core/styles'
+
+// @material-ui/icons
+
+// core components
+import GridContainer from 'components/Grid/GridContainer.js'
+import GridItem from 'components/Grid/GridItem.js'
+import CustomInput from 'components/CustomInput/CustomInput.js'
+import Button from 'components/CustomButtons/Button.js'
+
+import styles from 'assets/jss/material-kit-react/views/landingPageSections/workStyle.js'
+
+const useStyles = makeStyles(styles)
 
 export const ContactSection = () => {
+  const classes = useStyles()
+
   const [name, setName] = useState(null)
   const [email, setEmail] = useState(null)
   const [message, setMessage] = useState(null)
 
   const handleSubmit = (e) => {
+    e.preventDefault()
+
+    const API_ENDPOINT = process.env.REACT_APP_CONTACT_EMAIL_API_ENDPOINT
+
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -23,66 +35,91 @@ export const ContactSection = () => {
         message: message,
       }),
     }
-    console.log(requestOptions)
-    const response = fetch(
-      'https://g9iq74nd1j.execute-api.us-east-2.amazonaws.com/default/contactFormEmailer-ddrLive',
-      requestOptions
-    )
-    console.log(response)
+    fetch(API_ENDPOINT, requestOptions)
+      .then((resp) => resp.json())
+      .then((resp) => {
+        console.log(resp)
+        if (resp.statusCode === 200) {
+          console.log('Message Sent')
+          clearForm()
+        } else {
+          console.log('Message Not Sent')
+        }
+      })
+  }
+
+  const clearForm = () => {
+    setName(null)
+    setEmail(null)
+    setMessage(null)
   }
 
   return (
-    <Paper elevation={14}>
-      <Grid
-        container
-        direction='column'
-        justify='center'
-        alignItems='center'
-        spacing={2}>
-        <Grid item xs>
-          <Typography variant='h2'>Contact Us</Typography>
-        </Grid>
-        <Grid item xs>
-          <FormControl>
-            <Grid container direction='column' alignItems='center' spacing={2}>
-              <Grid item xs>
-                <TextField
-                  id='name-contact-input'
-                  variant='outlined'
-                  label='Name'
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  fullWidth></TextField>
-              </Grid>
-              <Grid item xs>
-                <TextField
-                  id='email-contact-input'
-                  variant='outlined'
-                  label='Email'
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  fullWidth></TextField>
-              </Grid>
-              <Grid item xs>
-                <TextField
-                  multiline
-                  id='message-contact-input'
-                  variant='outlined'
-                  label='Message'
-                  value={message}
-                  rows={6}
-                  onChange={(e) => setMessage(e.target.value)}
-                  fullWidth></TextField>
-              </Grid>
-              <Grid item xs>
-                <Button variant='contained' onClick={(e) => handleSubmit(e)}>
-                  Submit
-                </Button>
-              </Grid>
-            </Grid>
-          </FormControl>
-        </Grid>
-      </Grid>
-    </Paper>
+    <div className={classes.section}>
+      <GridContainer justify='center'>
+        <GridItem cs={12} sm={12} md={8}>
+          <h2 className={classes.title}>Work with us</h2>
+          <h4 className={classes.description}>
+            Divide details about your product or agency work into parts. Write a
+            few lines about each one and contact us about any further
+            collaboration. We will responde get back to you in a couple of
+            hours.
+          </h4>
+          <GridContainer>
+            <GridItem xs={12} sm={12} md={6}>
+              <CustomInput
+                labelText='Your Name'
+                id='name'
+                formControlProps={{
+                  fullWidth: true,
+                }}
+                inputProps={{
+                  value: name,
+                  defaultValue: null,
+                  required: true,
+                  onChange: (e) => setName(e.target.value),
+                }}
+              />
+            </GridItem>
+            <GridItem xs={12} sm={12} md={6}>
+              <CustomInput
+                labelText='Your Email'
+                id='email'
+                formControlProps={{
+                  fullWidth: true,
+                }}
+                inputProps={{
+                  value: email,
+                  defaultValue: null,
+                  required: true,
+                  onChange: (e) => setEmail(e.target.value),
+                }}
+              />
+            </GridItem>
+            <CustomInput
+              labelText='Your Message'
+              id='message'
+              formControlProps={{
+                fullWidth: true,
+                className: classes.textArea,
+              }}
+              inputProps={{
+                value: message,
+                defaultValue: null,
+                required: true,
+                multiline: true,
+                rows: 5,
+                onChange: (e) => setMessage(e.target.value),
+              }}
+            />
+            <GridItem xs={12} sm={12} md={4}>
+              <Button color='primary' onClick={(e) => handleSubmit(e)}>
+                Send Message
+              </Button>
+            </GridItem>
+          </GridContainer>
+        </GridItem>
+      </GridContainer>
+    </div>
   )
 }
