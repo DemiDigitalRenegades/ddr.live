@@ -21,6 +21,8 @@ import MeikPic from 'assets/img/faces/Meik.jpg'
 import MarkPic from 'assets/img/faces/Mark.jpg'
 import LydiaPic from 'assets/img/faces/Lydia.jpg'
 import CameronPic from 'assets/img/faces/Cameron.jpg'
+import RobPic from 'assets/img/faces/Rob.jpg'
+import PlaceholderPic from 'assets/img/faces/kendall.jpg'
 
 const useStyles = makeStyles(styles)
 
@@ -116,93 +118,175 @@ export const TeamSection = () => {
                 </Card>
               </GridItem>
             </GridContainer>
-            <GridItem xs={12} sm={12} md={4}>
-              <Card plain>
-                <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                  <img src={LydiaPic} alt='...' className={imageClasses} />
-                </GridItem>
-                <h4 className={classes.cardTitle}>
-                  Lydia
-                  <br />
-                  <small className={classes.smallTitle}>
-                    Performance Coordinator
-                  </small>
-                </h4>
-                <CardBody>
-                  <p className={classes.description}>
-                    Our resident dance guru - Lydia has been performing most of
-                    her life. She is delighted to bring performing artists from
-                    all over the country to virtual productions. Lydia also
-                    assists with project management and marketing. In her free
-                    time, she loves exploring other countries, climbing
-                    mountains, and drinking fine wine
-                  </p>
-                </CardBody>
-                <CardFooter className={classes.justifyCenter}>
-                  <Button
-                    justIcon
-                    color='transparent'
-                    className={classes.margin5}>
-                    <i className={classes.socials + ' fab fa-twitter'} />
-                  </Button>
-                  <Button
-                    justIcon
-                    color='transparent'
-                    className={classes.margin5}>
-                    <i className={classes.socials + ' fab fa-instagram'} />
-                  </Button>
-                  <Button
-                    justIcon
-                    color='transparent'
-                    className={classes.margin5}>
-                    <i className={classes.socials + ' fab fa-facebook'} />
-                  </Button>
-                </CardFooter>
-              </Card>
-            </GridItem>
-            <GridItem xs={12} sm={12} md={4}>
-              <Card plain>
-                <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                  <img src={CameronPic} alt='...' className={imageClasses} />
-                </GridItem>
-                <h4 className={classes.cardTitle}>
-                  Cameron
-                  <br />
-                  <small className={classes.smallTitle}>
-                    Engineering Support
-                  </small>
-                </h4>
-                <CardBody>
-                  <p className={classes.description}>
-                    Cameron hails from Canada and has a wide range of experience
-                    in audio/visual integration for events. He specializes in
-                    tech for sports, corporate events and music festivals. In
-                    his free time, he loves snowboarding, camping, and taking
-                    his cat Gio on walks.
-                  </p>
-                </CardBody>
-                <CardFooter className={classes.justifyCenter}>
-                  <Button
-                    justIcon
-                    color='transparent'
-                    className={classes.margin5}>
-                    <i className={classes.socials + ' fab fa-twitter'} />
-                  </Button>
-                  <Button
-                    justIcon
-                    color='transparent'
-                    className={classes.margin5}>
-                    <i className={classes.socials + ' fab fa-instagram'} />
-                  </Button>
-                  <Button
-                    justIcon
-                    color='transparent'
-                    className={classes.margin5}>
-                    <i className={classes.socials + ' fab fa-facebook'} />
-                  </Button>
-                </CardFooter>
-              </Card>
-            </GridItem>
+            <GridContainer justify='center'>
+              <GridItem xs={12} sm={12} md={4}>
+                <Card plain>
+                  <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
+                    <img src={LydiaPic} alt='...' className={imageClasses} />
+                  </GridItem>
+                  <h4 className={classes.cardTitle}>
+                    Lydia
+                    <br />
+                    <small className={classes.smallTitle}>
+                      Performance Coordinator
+                    </small>
+                  </h4>
+                  <CardBody>
+                    <p className={classes.description}>
+                      Our resident dance guru - Lydia has been performing most
+                      of her life. She is delighted to bring performing artists
+                      from all over the country to virtual productions. Lydia
+                      also assists with project management and marketing. In her
+                      free time, she loves exploring other countries, climbing
+                      mountains, and drinking fine wine
+                    </p>
+                  </CardBody>
+                  <CardFooter className={classes.justifyCenter}>
+                    <Button
+                      justIcon
+                      color='transparent'
+                      className={classes.margin5}>
+                      <i className={classes.socials + ' fab fa-twitter'} />
+                    </Button>
+                    <Button
+                      justIcon
+                      color='transparent'
+                      className={classes.margin5}>
+                      <i className={classes.socials + ' fab fa-instagram'} />
+                    </Button>
+                    <Button
+                      justIcon
+                      color='transparent'
+                      className={classes.margin5}>
+                      <i className={classes.socials + ' fab fa-facebook'} />
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </GridItem>
+              <GridItem xs={12} sm={12} md={4}>
+                <Card plain>
+                  <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
+                    <img src={CameronPic} alt='...' className={imageClasses} />
+                  </GridItem>
+                  <h4 className={classes.cardTitle}>
+                    Cameron
+                    <br />
+                    <small className={classes.smallTitle}>
+                      Engineering Support
+                    </small>
+                  </h4>
+                  <CardBody>
+                    <p className={classes.description}>
+                      Cameron hails from Canada and has a wide range of
+                      experience in audio/visual integration for events. He
+                      specializes in tech for sports, corporate events and music
+                      festivals. In his free time, he loves snowboarding,
+                      camping, and taking his cat Gio on walks.
+                    </p>
+                  </CardBody>
+                  <CardFooter className={classes.justifyCenter}>
+                    <Button
+                      justIcon
+                      color='transparent'
+                      className={classes.margin5}>
+                      <i className={classes.socials + ' fab fa-twitter'} />
+                    </Button>
+                    <Button
+                      justIcon
+                      color='transparent'
+                      className={classes.margin5}>
+                      <i className={classes.socials + ' fab fa-instagram'} />
+                    </Button>
+                    <Button
+                      justIcon
+                      color='transparent'
+                      className={classes.margin5}>
+                      <i className={classes.socials + ' fab fa-facebook'} />
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </GridItem>
+              <GridItem xs={12} sm={12} md={4}>
+                <Card plain>
+                  <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
+                    <img
+                      src={PlaceholderPic}
+                      alt='...'
+                      className={imageClasses}
+                    />
+                  </GridItem>
+                  <h4 className={classes.cardTitle}>
+                    Paul
+                    <br />
+                    <small className={classes.smallTitle}>Title</small>
+                  </h4>
+                  <CardBody>
+                    <p className={classes.description}>Desciption</p>
+                  </CardBody>
+                  <CardFooter className={classes.justifyCenter}>
+                    <Button
+                      justIcon
+                      color='transparent'
+                      className={classes.margin5}>
+                      <i className={classes.socials + ' fab fa-twitter'} />
+                    </Button>
+                    <Button
+                      justIcon
+                      color='transparent'
+                      className={classes.margin5}>
+                      <i className={classes.socials + ' fab fa-instagram'} />
+                    </Button>
+                    <Button
+                      justIcon
+                      color='transparent'
+                      className={classes.margin5}>
+                      <i className={classes.socials + ' fab fa-facebook'} />
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </GridItem>
+            </GridContainer>
+            <GridContainer justify='center'>
+              <GridItem xs={12} sm={12} md={4}>
+                <Card plain>
+                  <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
+                    <img src={RobPic} alt='...' className={imageClasses} />
+                  </GridItem>
+                  <h4 className={classes.cardTitle}>
+                    Rob
+                    <br />
+                    <small className={classes.smallTitle}>
+                      Software Engineer
+                    </small>
+                  </h4>
+                  <CardBody>
+                    <p className={classes.description}>
+                      Rob is a Software Engineer based in Melbourne, Australia.
+                    </p>
+                  </CardBody>
+                  <CardFooter className={classes.justifyCenter}>
+                    <Button
+                      justIcon
+                      color='transparent'
+                      className={classes.margin5}>
+                      <i className={classes.socials + ' fab fa-twitter'} />
+                    </Button>
+                    <Button
+                      justIcon
+                      color='transparent'
+                      className={classes.margin5}>
+                      <i className={classes.socials + ' fab fa-instagram'} />
+                    </Button>
+                    <Button
+                      justIcon
+                      color='transparent'
+                      className={classes.margin5}>
+                      <i className={classes.socials + ' fab fa-facebook'} />
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </GridItem>
+            </GridContainer>
           </GridContainer>
         </div>
       </div>

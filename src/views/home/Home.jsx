@@ -5,6 +5,7 @@ import {
   IconButton,
   Hidden,
   Typography,
+  Slide,
 } from '@material-ui/core'
 import { AboutUsSection } from './Sections/AboutUsSection'
 import { RecentWorkSection } from './Sections/RecentWorkSection'
@@ -39,7 +40,9 @@ export const Home = () => {
           <br></br>
           <Grid container justify='center' alignItems='center'>
             <IconButton color='primary' onClick={executeScroll}>
-              <ExpandMoreIcon /> Scroll <ExpandMoreIcon />
+              <Slide in direction={'up'} timeout={{ enter: 2000 }}>
+                <ExpandMoreIcon fontSize='large' />
+              </Slide>
             </IconButton>
           </Grid>
         </Hidden>
