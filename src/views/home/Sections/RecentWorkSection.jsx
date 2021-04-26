@@ -10,6 +10,7 @@ import {
   Button,
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
+import styles from 'assets/jss/material-kit-react/views/landingPageSections/productStyle.js'
 import DonarooPoster from 'assets/img/recentwork/donaroo.jpg'
 
 const useStyles = makeStyles({
@@ -21,8 +22,11 @@ const useStyles = makeStyles({
   },
 })
 
+const useMaterialStyle = makeStyles(styles)
+
 export const RecentWorkSection = () => {
   const classes = useStyles()
+  const materialClasses = useMaterialStyle()
 
   return (
     <Grid
@@ -32,7 +36,7 @@ export const RecentWorkSection = () => {
       alignItems='center'
       spacing={2}>
       <Grid item xs>
-        <Typography variant='h2'>Past Events</Typography>
+        <h2 className={materialClasses.title}>Past Events</h2>
       </Grid>
       <Grid
         container
@@ -49,9 +53,7 @@ export const RecentWorkSection = () => {
                 title='Donaroo 2021'
               />
               <CardContent className={classes.content}>
-                <Typography variant='h5' component='h2' color='primary'>
-                  Donaroo 2021
-                </Typography>
+                <h3 className={materialClasses.description}>Donaroo 2021</h3>
               </CardContent>
             </CardActionArea>
           </Card>
@@ -65,9 +67,9 @@ export const RecentWorkSection = () => {
                 title='Donaroo 2021'
               />
               <CardContent className={classes.content}>
-                <Typography variant='h5' component='h2' color='primary'>
+                <h3 className={materialClasses.description}>
                   40 Hour Work Week
-                </Typography>
+                </h3>
               </CardContent>
             </CardActionArea>
           </Card>

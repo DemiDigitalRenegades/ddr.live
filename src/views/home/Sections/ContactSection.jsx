@@ -31,7 +31,7 @@ export const ContactSection = () => {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        toEmails: ['robbie.didio@gmail.com'],
+        toEmails: ['contact@ddr.live'],
         subject: name + ' - ' + email,
         message: message,
       }),
