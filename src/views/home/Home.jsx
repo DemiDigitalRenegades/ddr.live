@@ -16,7 +16,6 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 
 export const Home = () => {
   const servicesRef = useRef(null)
-  const contactRef = useRef(null)
 
   const executeScroll = () =>
     servicesRef.current.scrollIntoView({ behavior: 'smooth' })
@@ -62,7 +61,7 @@ export const Home = () => {
           <Grid item xs>
             <TeamSection />
           </Grid>
-          <Grid item xs ref={contactRef}>
+          <Grid item xs>
             <ContactSection />
           </Grid>
         </Grid>

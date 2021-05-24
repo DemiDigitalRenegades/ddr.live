@@ -24,19 +24,19 @@ export const ContactSection = () => {
   const [formError, setFormError] = useState(false)
   const [formSuccess, setFormSuccess] = useState(false)
 
-  // useEffect(() => {
-  //   const errorTimeout = setTimeout(() => setFormError(false), 5000)
-  //   return () => {
-  //     clearTimeout(errorTimeout)
-  //   }
-  // }, formError)
+  useEffect(() => {
+    const errorTimeout = setTimeout(() => setFormError(false), 5000)
+    return () => {
+      clearTimeout(errorTimeout)
+    }
+  }, formError)
 
-  // useEffect(() => {
-  //   const successTimeout = setTimeout(() => setFormSuccess(false, 5000))
-  //   return () => {
-  //     clearTimeout(successTimeout)
-  //   }
-  // }, formSuccess)
+  useEffect(() => {
+    const successTimeout = setTimeout(() => setFormSuccess(false, 5000))
+    return () => {
+      clearTimeout(successTimeout)
+    }
+  }, formSuccess)
 
   const handleSubmit = () => {
     if (name === '' || email === '' || message === '') {
@@ -45,7 +45,7 @@ export const ContactSection = () => {
     } else {
       setFormError(false)
       const API_ENDPOINT =
-        'https://gbrox5b3y5.execute-api.us-east-2.amazonaws.com/dev/'
+        'https://qp1ozfr5s8.execute-api.us-east-2.amazonaws.com/dev'
 
       const requestOptions = {
         method: 'POST',

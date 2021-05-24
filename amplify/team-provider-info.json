@@ -15,7 +15,7 @@
       "function": {
         "contactEmailerFunc": {
           "deploymentBucketName": "amplify-ddrlive-dev-125957-deployment",
-          "s3Key": "amplify-builds/contactEmailerFunc-7263446a303131702f38-build.zip"
+          "s3Key": "amplify-builds/contactEmailerFunc-654b4e55477241525856-build.zip"
         }
       }
     }
