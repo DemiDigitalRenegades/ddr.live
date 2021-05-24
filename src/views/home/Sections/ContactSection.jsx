@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles'
-import { TextField } from '@material-ui/core'
+import { FormHelperText, TextField } from '@material-ui/core'
 
 // @material-ui/icons
 
@@ -12,6 +12,8 @@ import CustomInput from 'components/CustomInput/CustomInput.js'
 import Button from 'components/CustomButtons/Button.js'
 
 import styles from 'assets/jss/material-kit-react/views/landingPageSections/workStyle.js'
+import useInterval from '@use-it/interval'
+import awsmobile from 'aws-exports'
 
 const useStyles = makeStyles(styles)
 
@@ -21,32 +23,54 @@ export const ContactSection = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
+  const [formError, setFormError] = useState(false)
+  const [formSuccess, setFormSuccess] = useState(false)
+
+  useEffect(() => {
+    const errorTimeout = setTimeout(() => setFormError(false), 5000)
+    return () => {
+      clearTimeout(errorTimeout)
+    }
+  }, formError)
+
+  useEffect(() => {
+    const successTimeout = setTimeout(() => setFormSuccess(false, 5000))
+    return () => {
+      clearTimeout(successTimeout)
+    }
+  }, formSuccess)
 
   const handleSubmit = () => {
-    clearForm()
+    if (name === '' || email === '' || message === '') {
+      console.log('Please enter all values. Message not sent.')
+      setFormError(true)
+    } else {
+      setFormError(false)
+      const API_ENDPOINT =
+        'https://gbrox5b3y5.execute-api.us-east-2.amazonaws.com/dev/'
 
-    const API_ENDPOINT = process.env.REACT_APP_CONTACT_EMAIL_API_ENDPOINT
-
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        toEmails: ['contact@ddr.live'],
-        subject: name + ' - ' + email,
-        message: message,
-      }),
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          toEmails: ['robbie.didio@gmail.com'],
+          subject: name + ' - ' + email,
+          message: message,
+        }),
+      }
+      fetch(API_ENDPOINT, requestOptions)
+        .then((resp) => resp.json())
+        .then((resp) => {
+          console.log(resp)
+          if (resp.statusCode === 200) {
+            console.log('Message Sent')
+            clearForm()
+            setFormSuccess(true)
+          } else {
+            console.log('Message Not Sent')
+          }
+        })
     }
-    fetch(API_ENDPOINT, requestOptions)
-      .then((resp) => resp.json())
-      .then((resp) => {
-        console.log(resp)
-        if (resp.statusCode === 200) {
-          console.log('Message Sent')
-          clearForm()
-        } else {
-          console.log('Message Not Sent')
-        }
-      })
   }
 
   const clearForm = () => {
@@ -116,6 +140,12 @@ export const ContactSection = () => {
                 <Button color='primary' onClick={handleSubmit}>
                   Send Message
                 </Button>
+                {formError && (
+                  <FormHelperText error>Please enter all values</FormHelperText>
+                )}
+                {formSuccess && (
+                  <FormHelperText>Your message was sent!</FormHelperText>
+                )}
               </GridItem>
             </GridContainer>
           </form>

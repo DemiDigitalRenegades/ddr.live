@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 // nodejs library that concatenates classes
 import classNames from 'classnames'
 // @material-ui/core components
@@ -22,7 +22,8 @@ import MarkPic from 'assets/img/faces/Mark.jpg'
 import LydiaPic from 'assets/img/faces/Lydia.jpg'
 import CameronPic from 'assets/img/faces/Cameron.jpg'
 import RobPic from 'assets/img/faces/Rob.jpg'
-import PlaceholderPic from 'assets/img/faces/kendall.jpg'
+import PaulPic from 'assets/img/faces/Paul.jpg'
+import DanPic from 'assets/img/faces/Dan.jpg'
 
 const useStyles = makeStyles(styles)
 
@@ -33,6 +34,11 @@ export const TeamSection = () => {
     classes.imgRoundedCircle,
     classes.imgFluid
   )
+
+  const openInNewTab = (url) => {
+    return <a href={url} target='_blank' rel='noopener noreferrer'></a>
+  }
+
   return (
     <Container>
       <div className={classes.section}>
@@ -63,20 +69,11 @@ export const TeamSection = () => {
                     <Button
                       justIcon
                       color='transparent'
-                      className={classes.margin5}>
-                      <i className={classes.socials + ' fab fa-twitter'} />
-                    </Button>
-                    <Button
-                      justIcon
-                      color='transparent'
-                      className={classes.margin5}>
-                      <i className={classes.socials + ' fab fa-instagram'} />
-                    </Button>
-                    <Button
-                      justIcon
-                      color='transparent'
-                      className={classes.margin5}>
-                      <i className={classes.socials + ' fab fa-facebook'} />
+                      className={classes.margin5}
+                      onClick={() => {
+                        window.open('https://www.linkedin.com/in/kenworthym/')
+                      }}>
+                      <i className={classes.socials + ' fab fa-linkedin'} />
                     </Button>
                   </CardFooter>
                 </Card>
@@ -209,38 +206,38 @@ export const TeamSection = () => {
               <GridItem xs={12} sm={12} md={4}>
                 <Card plain>
                   <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                    <img
-                      src={PlaceholderPic}
-                      alt='...'
-                      className={imageClasses}
-                    />
+                    <img src={PaulPic} alt='...' className={imageClasses} />
                   </GridItem>
                   <h4 className={classes.cardTitle}>
                     Paul
                     <br />
-                    <small className={classes.smallTitle}>Title</small>
+                    <small className={classes.smallTitle}>
+                      Project Manager
+                    </small>
                   </h4>
                   <CardBody>
-                    <p className={classes.description}>Desciption</p>
+                    <p className={classes.description}>
+                      Paul’s passion for music and fascination with business led
+                      him to his project manager position at DDR. His years of
+                      corporate business experience coupled with a commitment to
+                      improvement constantly pushes him deliver high quality
+                      outcomes for his clients. As a life-long learner Paul is
+                      constantly open to new experiences and ideas. Outside the
+                      office Paul enjoys traveling, cooking, cocktail mixing,
+                      reading, and playing games with friends.
+                    </p>
                   </CardBody>
                   <CardFooter className={classes.justifyCenter}>
                     <Button
                       justIcon
                       color='transparent'
-                      className={classes.margin5}>
-                      <i className={classes.socials + ' fab fa-twitter'} />
-                    </Button>
-                    <Button
-                      justIcon
-                      color='transparent'
-                      className={classes.margin5}>
-                      <i className={classes.socials + ' fab fa-instagram'} />
-                    </Button>
-                    <Button
-                      justIcon
-                      color='transparent'
-                      className={classes.margin5}>
-                      <i className={classes.socials + ' fab fa-facebook'} />
+                      className={classes.margin5}
+                      onClick={() => {
+                        window.open(
+                          'https://www.linkedin.com/in/paul-taylor-657924109/'
+                        )
+                      }}>
+                      <i className={classes.socials + ' fab fa-linkedin'} />
                     </Button>
                   </CardFooter>
                 </Card>
@@ -256,32 +253,39 @@ export const TeamSection = () => {
                     Rob
                     <br />
                     <small className={classes.smallTitle}>
-                      Software Engineer
+                      Front-End Software Engineer
                     </small>
                   </h4>
                   <CardBody>
                     <p className={classes.description}>
-                      Rob is a Software Engineer based in Melbourne, Australia.
+                      Rob is a Software Engineer currently clacking away at his
+                      keyboard in Melbourne, Australia. His mix of on-air radio
+                      experience, technical expertise, and complete music
+                      nerd-ery was a perfect fit for the team here at DDR. He's
+                      currently pursing a degree at the University of Melbourne
+                      while catching every gig he can in Melbourne's
+                      inner-north. Let us know if you need to stream your bush
+                      doof.
                     </p>
                   </CardBody>
                   <CardFooter className={classes.justifyCenter}>
                     <Button
                       justIcon
                       color='transparent'
-                      className={classes.margin5}>
-                      <i className={classes.socials + ' fab fa-twitter'} />
-                    </Button>
-                    <Button
-                      justIcon
-                      color='transparent'
-                      className={classes.margin5}>
+                      className={classes.margin5}
+                      onClick={() => {
+                        window.open('https://www.instagram.com/robdio')
+                      }}>
                       <i className={classes.socials + ' fab fa-instagram'} />
                     </Button>
                     <Button
                       justIcon
                       color='transparent'
-                      className={classes.margin5}>
-                      <i className={classes.socials + ' fab fa-facebook'} />
+                      className={classes.margin5}
+                      onClick={() => {
+                        window.open('https://github.com/rob-didio')
+                      }}>
+                      <i className={classes.socials + ' fab fa-github'} />
                     </Button>
                   </CardFooter>
                 </Card>
@@ -289,19 +293,27 @@ export const TeamSection = () => {
               <GridItem xs={12} sm={12} md={4}>
                 <Card plain>
                   <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                    <img
-                      src={PlaceholderPic}
-                      alt='...'
-                      className={imageClasses}
-                    />
+                    <img src={DanPic} alt='...' className={imageClasses} />
                   </GridItem>
                   <h4 className={classes.cardTitle}>
                     Dan
                     <br />
-                    <small className={classes.smallTitle}>Title</small>
+                    <small className={classes.smallTitle}>
+                      Production Engineer
+                    </small>
                   </h4>
                   <CardBody>
-                    <p className={classes.description}>Description</p>
+                    <p className={classes.description}>
+                      Dan has an extensive background for the past decade that’s
+                      helped shape much of the major live event industry in
+                      western Canada. His skill set encompasses audio
+                      engineering, backline technician, stagehand support, live
+                      visuals, lighting design, stage building, gear repair and
+                      transport. In his free time he enjoys reading, learning
+                      from various educational channels on video streaming
+                      sites, the odd video game and messing around with music
+                      production.
+                    </p>
                   </CardBody>
                   <CardFooter className={classes.justifyCenter}>
                     <Button
