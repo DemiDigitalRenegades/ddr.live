@@ -33,7 +33,7 @@ export const AboutUsSection = () => {
         </Grid>
         <Grid item xs>
           <Grid container justify='center' alignItems='center' spacing={2}>
-            <Grid item xs xs={12} sm={12} md={6}>
+            <Grid item xs={12} sm={12} md={6}>
               <h3 className={classes.title} variant='h5' align='center'>
                 High-Quality Experience
               </h3>

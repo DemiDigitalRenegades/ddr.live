@@ -35,10 +35,6 @@ export const TeamSection = () => {
     classes.imgFluid
   )
 
-  const openInNewTab = (url) => {
-    return <a href={url} target='_blank' rel='noopener noreferrer'></a>
-  }
-
   return (
     <Container>
       <div className={classes.section}>

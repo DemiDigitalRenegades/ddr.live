@@ -44,7 +44,7 @@ export const RecentWorkSection = () => {
         justify='center'
         alignItems='center'
         spacing={6}>
-        <Grid item xs xs={12} sm={12} md={6}>
+        <Grid item xs={12} sm={12} md={6}>
           <Card>
             <CardActionArea>
               <CardMedia
@@ -58,7 +58,7 @@ export const RecentWorkSection = () => {
             </CardActionArea>
           </Card>
         </Grid>
-        <Grid item xs xs={12} sm={12} md={6}>
+        <Grid item xs={12} sm={12} md={6}>
           <Card>
             <CardActionArea>
               <CardMedia

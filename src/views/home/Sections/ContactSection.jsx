@@ -12,8 +12,6 @@ import CustomInput from 'components/CustomInput/CustomInput.js'
 import Button from 'components/CustomButtons/Button.js'
 
 import styles from 'assets/jss/material-kit-react/views/landingPageSections/workStyle.js'
-import useInterval from '@use-it/interval'
-import awsmobile from 'aws-exports'
 
 const useStyles = makeStyles(styles)
 
@@ -26,19 +24,19 @@ export const ContactSection = () => {
   const [formError, setFormError] = useState(false)
   const [formSuccess, setFormSuccess] = useState(false)
 
-  useEffect(() => {
-    const errorTimeout = setTimeout(() => setFormError(false), 5000)
-    return () => {
-      clearTimeout(errorTimeout)
-    }
-  }, formError)
+  // useEffect(() => {
+  //   const errorTimeout = setTimeout(() => setFormError(false), 5000)
+  //   return () => {
+  //     clearTimeout(errorTimeout)
+  //   }
+  // }, formError)
 
-  useEffect(() => {
-    const successTimeout = setTimeout(() => setFormSuccess(false, 5000))
-    return () => {
-      clearTimeout(successTimeout)
-    }
-  }, formSuccess)
+  // useEffect(() => {
+  //   const successTimeout = setTimeout(() => setFormSuccess(false, 5000))
+  //   return () => {
+  //     clearTimeout(successTimeout)
+  //   }
+  // }, formSuccess)
 
   const handleSubmit = () => {
     if (name === '' || email === '' || message === '') {
