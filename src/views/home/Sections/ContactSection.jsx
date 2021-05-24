@@ -12,6 +12,7 @@ import CustomInput from 'components/CustomInput/CustomInput.js'
 import Button from 'components/CustomButtons/Button.js'
 
 import styles from 'assets/jss/material-kit-react/views/landingPageSections/workStyle.js'
+import { API } from 'aws-amplify'
 
 const useStyles = makeStyles(styles)
 
@@ -38,25 +39,19 @@ export const ContactSection = () => {
     }
   }, formSuccess)
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (name === '' || email === '' || message === '') {
       console.log('Please enter all values. Message not sent.')
       setFormError(true)
     } else {
       setFormError(false)
-      const API_ENDPOINT =
-        'https://qp1ozfr5s8.execute-api.us-east-2.amazonaws.com/dev'
-
-      const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      await API.post('contactEmailer', '/contactEmailer', {
         body: JSON.stringify({
           toEmails: ['robbie.didio@gmail.com'],
           subject: name + ' - ' + email,
           message: message,
         }),
-      }
-      fetch(API_ENDPOINT, requestOptions)
+      })
         .then((resp) => resp.json())
         .then((resp) => {
           console.log(resp)
@@ -67,6 +62,9 @@ export const ContactSection = () => {
           } else {
             console.log('Message Not Sent')
           }
+        })
+        .catch((error) => {
+          console.log(error.response)
         })
     }
   }
