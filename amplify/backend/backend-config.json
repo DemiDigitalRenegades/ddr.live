@@ -7,7 +7,7 @@
     }
   },
   "api": {
-    "contactEmailer": {
+    "contactEmailerApi": {
       "service": "API Gateway",
       "providerPlugin": "awscloudformation",
       "dependsOn": [

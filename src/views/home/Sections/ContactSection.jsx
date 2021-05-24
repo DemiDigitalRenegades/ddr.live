@@ -45,23 +45,22 @@ export const ContactSection = () => {
       setFormError(true)
     } else {
       setFormError(false)
-      await API.post('contactEmailer', '/contactEmailer', {
-        body: JSON.stringify({
+      const apiName = 'contactEmailerApi'
+      const path = '/'
+      const payload = {
+        body: {
           toEmails: ['robbie.didio@gmail.com'],
           subject: name + ' - ' + email,
           message: message,
-        }),
-      })
-        .then((resp) => resp.json())
+        },
+      }
+
+      await API.post(apiName, path, payload)
         .then((resp) => {
           console.log(resp)
-          if (resp.statusCode === 200) {
-            console.log('Message Sent')
-            clearForm()
-            setFormSuccess(true)
-          } else {
-            console.log('Message Not Sent')
-          }
+          console.log('Message Sent')
+          clearForm()
+          setFormSuccess(true)
         })
         .catch((error) => {
           console.log(error.response)
