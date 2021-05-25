@@ -9,7 +9,6 @@ import {
 } from '@material-ui/core'
 import Header from 'components/Header/Header'
 import { HeaderLinks } from 'components/Header/HeaderLinks'
-import { ExecuteScroll } from 'components/ExecuteScroll'
 import { AboutUsSection } from './Sections/AboutUsSection'
 import { RecentWorkSection } from './Sections/RecentWorkSection'
 import { ServicesSection } from './Sections/ServicesSection'
@@ -18,6 +17,7 @@ import { TeamSection } from './Sections/TeamSection'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 
 export const Home = () => {
+  const landPageRef = useRef(null)
   const servicesRef = useRef(null)
   const aboutUsRef = useRef(null)
   const recentWorkRef = useRef(null)
@@ -34,6 +34,8 @@ export const Home = () => {
         brand='DDR.Live'
         dense
         fixed
+        executeScroll={executeScroll}
+        landPageRef={landPageRef}
         rightLinks={
           <HeaderLinks
             executeScroll={executeScroll}
@@ -48,7 +50,8 @@ export const Home = () => {
         style={{
           height: '100vh',
           padding: '10%',
-        }}>
+        }}
+        ref={landPageRef}>
         <div
           style={{
             backgroundImage: `url(${require('assets/img/ddrlive-transparent-white.png')})`,

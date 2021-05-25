@@ -54,7 +54,16 @@ export default function Header(props) {
     }
   }
 
-  const { color, rightLinks, leftLinks, brand, fixed, absolute } = props
+  const {
+    color,
+    rightLinks,
+    leftLinks,
+    brand,
+    fixed,
+    absolute,
+    executeScroll,
+    landPageRef,
+  } = props
   const appBarClasses = classNames({
     [classes.appBar]: true,
     [classes[color]]: color,
@@ -62,7 +71,11 @@ export default function Header(props) {
     [classes.fixed]: fixed,
   })
   const brandComponent = (
-    <Button className={classes.title} href={window.location.origin}>
+    <Button
+      className={classes.title}
+      onClick={() => {
+        executeScroll(landPageRef)
+      }}>
       {brand}
     </Button>
   )

@@ -4,6 +4,7 @@ import DeleteIcon from '@material-ui/icons/Delete'
 import IconButton from '@material-ui/core/IconButton'
 import PeopleOutlineIcon from '@material-ui/icons/PeopleOutline'
 import InstagramIcon from '@material-ui/icons/Instagram'
+import ForumOutlinedIcon from '@material-ui/icons/ForumOutlined'
 // react components for routing our app without refresh
 import { Link } from 'react-router-dom'
 
@@ -20,8 +21,6 @@ import { Apps, CloudDownload } from '@material-ui/icons'
 import CustomDropdown from 'components/CustomDropdown/CustomDropdown.js'
 import Button from 'components/CustomButtons/Button.js'
 
-import { ExecuteScroll } from 'components/ExecuteScroll'
-
 import styles from 'assets/jss/material-kit-react/components/headerLinksStyle.js'
 
 const useStyles = makeStyles(styles)
@@ -33,68 +32,44 @@ export const HeaderLinks = (props) => {
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
-        <Tooltip
-          id='services-tooltip'
-          title='Our Services'
-          placement={window.innerWidth > 959 ? 'top' : 'left'}
-          classes={{ tooltip: classes.tooltip }}>
-          <Button
-            color='transparent'
-            onClick={() => {
-              executeScroll(servicesRef)
-            }}
-            className={classes.navLink}>
-            <InstagramIcon />
-          </Button>
-        </Tooltip>
+        <Button
+          color='transparent'
+          onClick={() => {
+            executeScroll(servicesRef)
+          }}
+          className={classes.navLink}>
+          Our Services
+        </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Tooltip
-          id='about-tooltip'
-          title='About Us'
-          placement={window.innerWidth > 959 ? 'top' : 'left'}
-          classes={{ tooltip: classes.tooltip }}>
-          <Button
-            color='transparent'
-            onClick={() => {
-              executeScroll(aboutUsRef)
-            }}
-            className={classes.navLink}>
-            <InstagramIcon />
-          </Button>
-        </Tooltip>
+        <Button
+          color='transparent'
+          onClick={() => {
+            executeScroll(aboutUsRef)
+          }}
+          className={classes.navLink}>
+          About Us
+        </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Tooltip
-          id='team-tooltip'
-          title='Meet the Team'
-          placement={window.innerWidth > 959 ? 'top' : 'left'}
-          classes={{ tooltip: classes.tooltip }}>
-          <Button
-            color='transparent'
-            onClick={() => {
-              executeScroll(teamRef)
-            }}
-            className={classes.navLink}>
-            <InstagramIcon />
-          </Button>
-        </Tooltip>
+        <Button
+          color='transparent'
+          onClick={() => {
+            executeScroll(teamRef)
+          }}
+          className={classes.navLink}>
+          Meet the Team
+        </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Tooltip
-          id='contact-tooltip'
-          title='Contact Us'
-          placement={window.innerWidth > 959 ? 'top' : 'left'}
-          classes={{ tooltip: classes.tooltip }}>
-          <Button
-            color='transparent'
-            onClick={() => {
-              executeScroll(contactRef)
-            }}
-            className={classes.navLink}>
-            <InstagramIcon />
-          </Button>
-        </Tooltip>
+        <Button
+          color='transparent'
+          onClick={() => {
+            executeScroll(contactRef)
+          }}
+          className={classes.navLink}>
+          Contact Us
+        </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
         <Tooltip
