@@ -1,5 +1,5 @@
 /*eslint-disable*/
-import React from 'react'
+import React, { forwardRef } from 'react'
 import DeleteIcon from '@material-ui/icons/Delete'
 import IconButton from '@material-ui/core/IconButton'
 import PeopleOutlineIcon from '@material-ui/icons/PeopleOutline'
@@ -20,15 +20,82 @@ import { Apps, CloudDownload } from '@material-ui/icons'
 import CustomDropdown from 'components/CustomDropdown/CustomDropdown.js'
 import Button from 'components/CustomButtons/Button.js'
 
+import { ExecuteScroll } from 'components/ExecuteScroll'
+
 import styles from 'assets/jss/material-kit-react/components/headerLinksStyle.js'
 
 const useStyles = makeStyles(styles)
 
-export default function HeaderLinks(props) {
+export const HeaderLinks = (props) => {
   const classes = useStyles()
+  const { executeScroll, servicesRef, aboutUsRef, teamRef, contactRef } = props
 
   return (
     <List className={classes.list}>
+      <ListItem className={classes.listItem}>
+        <Tooltip
+          id='services-tooltip'
+          title='Our Services'
+          placement={window.innerWidth > 959 ? 'top' : 'left'}
+          classes={{ tooltip: classes.tooltip }}>
+          <Button
+            color='transparent'
+            onClick={() => {
+              executeScroll(servicesRef)
+            }}
+            className={classes.navLink}>
+            <InstagramIcon />
+          </Button>
+        </Tooltip>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Tooltip
+          id='about-tooltip'
+          title='About Us'
+          placement={window.innerWidth > 959 ? 'top' : 'left'}
+          classes={{ tooltip: classes.tooltip }}>
+          <Button
+            color='transparent'
+            onClick={() => {
+              executeScroll(aboutUsRef)
+            }}
+            className={classes.navLink}>
+            <InstagramIcon />
+          </Button>
+        </Tooltip>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Tooltip
+          id='team-tooltip'
+          title='Meet the Team'
+          placement={window.innerWidth > 959 ? 'top' : 'left'}
+          classes={{ tooltip: classes.tooltip }}>
+          <Button
+            color='transparent'
+            onClick={() => {
+              executeScroll(teamRef)
+            }}
+            className={classes.navLink}>
+            <InstagramIcon />
+          </Button>
+        </Tooltip>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Tooltip
+          id='contact-tooltip'
+          title='Contact Us'
+          placement={window.innerWidth > 959 ? 'top' : 'left'}
+          classes={{ tooltip: classes.tooltip }}>
+          <Button
+            color='transparent'
+            onClick={() => {
+              executeScroll(contactRef)
+            }}
+            className={classes.navLink}>
+            <InstagramIcon />
+          </Button>
+        </Tooltip>
+      </ListItem>
       <ListItem className={classes.listItem}>
         <Tooltip
           id='instagram-tooltip'

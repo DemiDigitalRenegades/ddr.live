@@ -7,8 +7,6 @@ import 'assets/scss/material-kit-react.scss?v=1.9.0'
 
 import { Home } from './views/home/Home'
 import Footer from 'components/Footer/Footer.js'
-import Header from 'components/Header/Header'
-import HeaderLinks from 'components/Header/HeaderLinks'
 import Amplify from 'aws-amplify'
 import awsmobile from './aws-exports'
 
@@ -18,13 +16,6 @@ const hist = createBrowserHistory()
 
 ReactDOM.render(
   <div style={{ backgroundColor: 'black', minHeight: '100vh' }}>
-    <Header
-      color='transparent'
-      brand='DDR.Live'
-      dense
-      fixed
-      rightLinks={<HeaderLinks />}
-    />
     <div>
       <Router history={hist}>
         <Switch>
