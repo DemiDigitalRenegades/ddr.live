@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles'
-import { FormHelperText, TextField } from '@material-ui/core'
+import { FormHelperText } from '@material-ui/core'
 
 // @material-ui/icons
 
@@ -18,32 +18,21 @@ const useStyles = makeStyles(styles)
 
 export const ContactSection = () => {
   const classes = useStyles()
+  const FORM_MESSAGE_TIMEOUT = 4000
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
+  const [isSending, setSending] = useState(false)
   const [formError, setFormError] = useState(false)
   const [formSuccess, setFormSuccess] = useState(false)
-
-  useEffect(() => {
-    const errorTimeout = setTimeout(() => setFormError(false), 5000)
-    return () => {
-      clearTimeout(errorTimeout)
-    }
-  }, formError)
-
-  useEffect(() => {
-    const successTimeout = setTimeout(() => setFormSuccess(false, 5000))
-    return () => {
-      clearTimeout(successTimeout)
-    }
-  }, formSuccess)
 
   const handleSubmit = async () => {
     if (name === '' || email === '' || message === '') {
       console.log('Please enter all values. Message not sent.')
       setFormError(true)
     } else {
+      setSending(true)
       setFormError(false)
       const apiName = 'contactEmailerApi'
       const path = '/'
@@ -65,6 +54,7 @@ export const ContactSection = () => {
         .catch((error) => {
           console.log(error.response)
         })
+      setSending(false)
     }
   }
 
@@ -75,16 +65,30 @@ export const ContactSection = () => {
     console.log('clearing inputs')
   }
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setFormError(false)
+    }, FORM_MESSAGE_TIMEOUT)
+    return () => clearTimeout(timer)
+  })
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setFormSuccess(false)
+    }, FORM_MESSAGE_TIMEOUT)
+    return () => clearTimeout(timer)
+  })
+
   return (
     <div className={classes.section}>
       <GridContainer justify='center'>
         <GridItem cs={12} sm={12} md={8}>
           <h2 className={classes.title}>Work with us</h2>
           <h4 className={classes.description}>
-            Divide details about your product or agency work into parts. Write a
-            few lines about each one and contact us about any further
-            collaboration. We will responde get back to you in a couple of
-            hours.
+            Let's get your production off the ground! Drop us a line and we'll
+            get back you ASAP. Be it a price quote, an in-depth technical
+            question, or just a quick contact exchange, this form will have you
+            covered.
           </h4>
           <form>
             <GridContainer>
@@ -132,14 +136,19 @@ export const ContactSection = () => {
                 }}
               />
               <GridItem xs={12} sm={12} md={4}>
-                <Button color='primary' onClick={handleSubmit}>
+                <Button
+                  color='primary'
+                  onClick={handleSubmit}
+                  disabled={isSending}>
                   Send Message
                 </Button>
                 {formError && (
                   <FormHelperText error>Please enter all values</FormHelperText>
                 )}
                 {formSuccess && (
-                  <FormHelperText>Your message was sent!</FormHelperText>
+                  <FormHelperText style={{ color: 'green' }}>
+                    Your message was sent!
+                  </FormHelperText>
                 )}
               </GridItem>
             </GridContainer>

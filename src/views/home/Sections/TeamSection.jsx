@@ -94,7 +94,7 @@ export const TeamSection = () => {
                       paddle-boards, and plays Valorant.
                     </p>
                   </CardBody>
-                  <CardFooter className={classes.justifyCenter}>
+                  {/* <CardFooter className={classes.justifyCenter}>
                     <Button
                       justIcon
                       color='transparent'
@@ -107,7 +107,7 @@ export const TeamSection = () => {
                       className={classes.margin5}>
                       <i className={classes.socials + ' fab fa-linkedin'} />
                     </Button>
-                  </CardFooter>
+                  </CardFooter> */}
                 </Card>
               </GridItem>
             </GridContainer>
@@ -134,7 +134,7 @@ export const TeamSection = () => {
                       mountains, and drinking fine wine
                     </p>
                   </CardBody>
-                  <CardFooter className={classes.justifyCenter}>
+                  {/* <CardFooter className={classes.justifyCenter}>
                     <Button
                       justIcon
                       color='transparent'
@@ -153,7 +153,7 @@ export const TeamSection = () => {
                       className={classes.margin5}>
                       <i className={classes.socials + ' fab fa-facebook'} />
                     </Button>
-                  </CardFooter>
+                  </CardFooter> */}
                 </Card>
               </GridItem>
               <GridItem xs={12} sm={12} md={4}>
@@ -165,7 +165,7 @@ export const TeamSection = () => {
                     Cameron
                     <br />
                     <small className={classes.smallTitle}>
-                      Engineering Support
+                      Lead Production Engineer
                     </small>
                   </h4>
                   <CardBody>
@@ -177,7 +177,7 @@ export const TeamSection = () => {
                       camping, and taking his cat Gio on walks.
                     </p>
                   </CardBody>
-                  <CardFooter className={classes.justifyCenter}>
+                  {/* <CardFooter className={classes.justifyCenter}>
                     <Button
                       justIcon
                       color='transparent'
@@ -196,7 +196,7 @@ export const TeamSection = () => {
                       className={classes.margin5}>
                       <i className={classes.socials + ' fab fa-facebook'} />
                     </Button>
-                  </CardFooter>
+                  </CardFooter> */}
                 </Card>
               </GridItem>
               <GridItem xs={12} sm={12} md={4}>
@@ -311,7 +311,7 @@ export const TeamSection = () => {
                       production.
                     </p>
                   </CardBody>
-                  <CardFooter className={classes.justifyCenter}>
+                  {/* <CardFooter className={classes.justifyCenter}>
                     <Button
                       justIcon
                       color='transparent'
@@ -330,7 +330,7 @@ export const TeamSection = () => {
                       className={classes.margin5}>
                       <i className={classes.socials + ' fab fa-facebook'} />
                     </Button>
-                  </CardFooter>
+                  </CardFooter> */}
                 </Card>
               </GridItem>
             </GridContainer>

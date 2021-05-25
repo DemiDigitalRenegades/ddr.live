@@ -52,9 +52,9 @@ export const Home = () => {
           <Grid item xs ref={servicesRef}>
             <ServicesSection />
           </Grid>
-          <Grid item xs>
+          {/* <Grid item xs>
             <RecentWorkSection />
-          </Grid>
+          </Grid> */}
           <Grid item xs>
             <AboutUsSection />
           </Grid>
