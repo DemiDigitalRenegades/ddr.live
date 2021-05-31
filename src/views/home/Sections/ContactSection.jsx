@@ -38,7 +38,7 @@ export const ContactSection = () => {
       const path = '/'
       const payload = {
         body: {
-          toEmails: ['robbie.didio@gmail.com'],
+          toEmails: ['contact@ddr.live'],
           subject: name + ' - ' + email,
           message: message,
         },
@@ -143,7 +143,7 @@ export const ContactSection = () => {
                   Send Message
                 </Button>
                 {formError && (
-                  <FormHelperText error>Please enter all values</FormHelperText>
+                  <FormHelperText error>Please fill every box!</FormHelperText>
                 )}
                 {formSuccess && (
                   <FormHelperText style={{ color: 'green' }}>

@@ -15,8 +15,29 @@
       "function": {
         "contactEmailerFunc": {
           "deploymentBucketName": "amplify-ddrlive-dev-125957-deployment",
-          "s3Key": "amplify-builds/contactEmailerFunc-31366f58445236574c7a-build.zip"
+          "s3Key": "amplify-builds/contactEmailerFunc-593455347555346e4b4d-build.zip"
+        },
+        "ddrlived10d82e6DefineAuthChallenge": {},
+        "ddrlived10d82e6CreateAuthChallenge": {},
+        "ddrlived10d82e6VerifyAuthChallengeResponse": {
+          "RECAPTCHASECRET": ""
+        },
+        "ddrlived10d82e6CustomMessage": {
+          "REDIRECTURL": "",
+          "EMAILSUBJECT": "",
+          "EMAILMESSAGE": ""
+        },
+        "ddrlived10d82e6PreSignup": {
+          "DOMAINWHITELIST": ""
+        },
+        "S3Triggerd66d4921": {
+          "deploymentBucketName": "amplify-ddrlive-dev-125957-deployment",
+          "s3Key": "amplify-builds/S3Triggerd66d4921-694b68354b31792b4f64-build.zip"
         }
+      },
+      "auth": {
+        "ddrlived10d82e6": {},
+        "ddrlive9ae5814d": {}
       }
     }
   }

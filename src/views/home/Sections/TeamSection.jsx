@@ -16,6 +16,9 @@ import CardFooter from 'components/Card/CardFooter.js'
 import { Container } from '@material-ui/core'
 import { TeamCard } from 'components/Card/TeamCard'
 
+import { Storage } from 'aws-amplify'
+import yaml from 'js-yaml'
+
 import styles from 'assets/jss/material-kit-react/views/landingPageSections/teamStyle.js'
 
 import MeikPic from 'assets/img/faces/Meik.jpg'
@@ -35,6 +38,22 @@ export const TeamSection = () => {
     classes.imgRoundedCircle,
     classes.imgFluid
   )
+  const [yamlFile, setYaml] = useState(null)
+
+  // useEffect(() => {
+  //   async function getYaml() {
+  //     try {
+  //       const rawYaml = Storage.get(
+  //         'https://content125957-dev.s3.us-east-2.amazonaws.com/content.yml'
+  //       )
+  //       setYaml(yaml.load(rawYaml))
+  //       console.log(yamlFile)
+  //     } catch (e) {
+  //       console.log('error: ', e)
+  //     }
+  //   }
+  //   getYaml()
+  // }, [])
 
   return (
     <div className={classes.section}>
