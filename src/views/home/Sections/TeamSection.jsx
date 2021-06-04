@@ -17,7 +17,8 @@ import { Container } from '@material-ui/core'
 import { TeamCard } from 'components/Card/TeamCard'
 
 import { Storage } from 'aws-amplify'
-import yaml from 'js-yaml'
+import YAML from 'yaml'
+import fs from 'fs'
 
 import styles from 'assets/jss/material-kit-react/views/landingPageSections/teamStyle.js'
 
@@ -38,22 +39,25 @@ export const TeamSection = () => {
     classes.imgRoundedCircle,
     classes.imgFluid
   )
-  const [yamlFile, setYaml] = useState(null)
+  const [contentJson, setContentJson] = useState(null)
 
-  // useEffect(() => {
-  //   async function getYaml() {
-  //     try {
-  //       const rawYaml = Storage.get(
-  //         'https://content125957-dev.s3.us-east-2.amazonaws.com/content.yml'
-  //       )
-  //       setYaml(yaml.load(rawYaml))
-  //       console.log(yamlFile)
-  //     } catch (e) {
-  //       console.log('error: ', e)
-  //     }
-  //   }
-  //   getYaml()
-  // }, [])
+  useEffect(() => {
+    async function getJSON() {
+      try {
+        await Storage.get('TeamSection.json', {
+          download: true,
+          contentType: 'application/json',
+        }).then(async (resp) => {
+          const json = await new Response(resp.Body).json()
+          console.log(json.TeamSection)
+          setContentJson(json.TeamSection)
+        })
+      } catch (e) {
+        console.log('error: ', e)
+      }
+    }
+    getJSON()
+  }, [])
 
   return (
     <div className={classes.section}>
@@ -65,26 +69,17 @@ export const TeamSection = () => {
               <TeamCard
                 pic={MeikPic}
                 name='Meik'
-                title='Co-Founder'
-                bio="Meik is a Software & Solution Engineer from Buffalo, NY.
-                    He's been focused on building strong communities using his
-                    technical skills to bridge the gap between artists and fans
-                    during the pandemic through broadcast technology. He is a
-                    musician, a board-gamer, and k-drama binge-watcher."
-                linkedin='https://www.linkedin.com/in/kenworthym/'
+                title={contentJson?.Meik.title}
+                bio={contentJson?.Meik.bio}
+                linkedin={contentJson?.Meik.linkedin}
               />
             </GridItem>
             <GridItem xs={12} sm={12} md={4}>
               <TeamCard
                 pic={MarkPic}
                 name='Mark'
-                title='Co-Founder'
-                bio="You may know him by his DJ name, Subset. Mark marries a
-                passion for music and people with his technical background.
-                He's carefully crafted a bandwagon of weirdos for his Twitch
-                streams through countless renegade sets. Outside of his
-                weekly shows, Mark cuddles cats, paddle-boards, and plays
-                Valorant."
+                title={contentJson?.Mark.title}
+                bio={contentJson?.Mark.bio}
               />
             </GridItem>
           </GridContainer>
@@ -93,40 +88,25 @@ export const TeamSection = () => {
               <TeamCard
                 pic={LydiaPic}
                 name='Lydia'
-                title='Performance Coordinator'
-                bio='Our resident dance guru - Lydia has been performing most of
-                her life. She is delighted to bring performing artists from
-                all over the country to virtual productions. Lydia also
-                assists with project management and marketing. In her free
-                time, she loves exploring other countries, climbing
-                mountains, and drinking fine wine.'
+                title={contentJson?.Lydia.title}
+                bio={contentJson?.Lydia.bio}
               />
             </GridItem>
             <GridItem xs={12} sm={12} md={4}>
               <TeamCard
                 pic={PaulPic}
                 name='Paul'
-                title='Project Manager'
-                bio='Paul’s passion for music and fascination with business led
-                him to his project manager position at DDR. His years of
-                corporate business experience coupled with a commitment to
-                improvement constantly pushes him to deliver high quality
-                outcomes for his clients. Outside the office Paul enjoys
-                traveling, cooking, cocktail mixing, reading, and playing
-                games with friends.'
-                linkedin='https://www.linkedin.com/in/paul-taylor-657924109/'
+                title={contentJson?.Paul.title}
+                bio={contentJson?.Paul.bio}
+                linkedin={contentJson?.Paul.linkedin}
               />
             </GridItem>
             <GridItem xs={12} sm={12} md={4}>
               <TeamCard
                 pic={CameronPic}
                 name='Cameron'
-                title='Lead Production Engineer'
-                bio='Cameron hails from Canada and has a wide range of experience
-                in audio/visual integration for events. He specializes in
-                tech for sports, corporate events and music festivals. In
-                his free time, he loves snowboarding, camping, and taking
-                his cat Gio on walks.'
+                title={contentJson?.Cameron.title}
+                bio={contentJson?.Cameron.bio}
               />
             </GridItem>
           </GridContainer>
@@ -135,31 +115,18 @@ export const TeamSection = () => {
               <TeamCard
                 pic={RobPic}
                 name='Rob'
-                title='Front-End Software Engineer'
-                bio="Rob is a Software Engineer currently clacking away at his
-                keyboard in Melbourne, Australia. His mix of on-air radio
-                experience, technical expertise, and complete music nerd-ery
-                was a perfect fit for the team here at DDR. He's currently
-                pursing a degree at the University of Melbourne while
-                catching every gig he can in Melbourne's inner-north. Let us
-                know if you need to stream your bush doof."
-                github='https://github.com/rob-didio'
-                instagram='https://www.instagram.com/robdio'
+                title={contentJson?.Rob.title}
+                bio={contentJson?.Rob.bio}
+                github={contentJson?.Rob.github}
+                instagram={contentJson?.Rob.instagram}
               />
             </GridItem>
             <GridItem xs={12} sm={12} md={4}>
               <TeamCard
                 pic={DanPic}
                 name='Dan'
-                title='Production Engineer'
-                bio='Dan has an extensive background for the past decade that’s
-                helped shape much of the major live event industry in
-                western Canada. His skill set encompasses audio engineering,
-                backline technician, stagehand support, live visuals,
-                lighting design, stage building, gear repair and transport.
-                In his free time he enjoys reading, learning from various
-                educational channels on video streaming sites, the odd video
-                game and messing around with music production.'
+                title={contentJson?.Dan.title}
+                bio={contentJson?.Dan.bio}
               />
             </GridItem>
           </GridContainer>

@@ -30,9 +30,9 @@
         "ddrlived10d82e6PreSignup": {
           "DOMAINWHITELIST": ""
         },
-        "S3Triggerd66d4921": {
+        "S3Trigger44fc533d": {
           "deploymentBucketName": "amplify-ddrlive-dev-125957-deployment",
-          "s3Key": "amplify-builds/S3Triggerd66d4921-694b68354b31792b4f64-build.zip"
+          "s3Key": "amplify-builds/S3Trigger44fc533d-646a545561732b55334b-build.zip"
         }
       },
       "auth": {

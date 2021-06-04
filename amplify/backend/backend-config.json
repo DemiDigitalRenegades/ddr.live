@@ -5,10 +5,11 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
-    "S3Triggerd66d4921": {
+    "S3Trigger44fc533d": {
       "service": "Lambda",
       "providerPlugin": "awscloudformation",
-      "build": true
+      "build": true,
+      "dependsOn": []
     }
   },
   "api": {
@@ -42,7 +43,7 @@
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "S3Triggerd66d4921",
+          "resourceName": "S3Trigger44fc533d",
           "attributes": [
             "Name",
             "Arn",
