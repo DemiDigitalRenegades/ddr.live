@@ -5,23 +5,27 @@ import { Router, Route, Switch } from 'react-router-dom'
 
 import 'assets/scss/material-kit-react.scss?v=1.9.0'
 
-import Components from 'views/Components/Components.js'
-import LandingPage from 'views/LandingPage/LandingPage.js'
-import ProfilePage from 'views/ProfilePage/ProfilePage.js'
-import LoginPage from 'views/LoginPage/LoginPage.js'
 import { Home } from './views/home/Home'
+import Admin from './views/admin/Admin'
+import Footer from 'components/Footer/Footer.js'
+import Amplify from 'aws-amplify'
+import awsmobile from './aws-exports'
+
+Amplify.configure(awsmobile)
 
 const hist = createBrowserHistory()
 
 ReactDOM.render(
-  <Router history={hist}>
-    <Switch>
-      <Route path='/landing-page' component={LandingPage}/>
-      <Route path='/profile-page' component={ProfilePage}/>
-      <Route path='/login-page' component={LoginPage}/>
-      <Route path='/components' component={Components}/>
-      <Route exact path='/' component={Home}/>
-    </Switch>
-  </Router>,
-  document.getElementById('root'),
+  <div style={{ backgroundColor: 'black', minHeight: '100vh' }}>
+    <div>
+      <Router history={hist}>
+        <Switch>
+          <Route exact path='/' component={Home} />
+          {/* <Route exact path='/admin' component={Admin} /> */}
+        </Switch>
+      </Router>
+    </div>
+    <Footer />
+  </div>,
+  document.getElementById('root')
 )
