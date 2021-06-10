@@ -3,19 +3,19 @@
 
 const awsmobile = {
     "aws_project_region": "us-east-1",
-    "aws_cognito_identity_pool_id": "us-east-1:0d0c1e40-1def-4ae6-8af8-ac532c89335d",
+    "aws_cognito_identity_pool_id": "us-east-1:e580aeda-abc7-45d6-b6da-aeeca773e4e4",
     "aws_cognito_region": "us-east-1",
-    "aws_user_pools_id": "us-east-1_ibGGYFeTL",
-    "aws_user_pools_web_client_id": "78v47nt2udm7bt08r453pguh9t",
+    "aws_user_pools_id": "us-east-1_qivhF7qhJ",
+    "aws_user_pools_web_client_id": "107jv1nsd560rflpqq7g1qpp0v",
     "oauth": {},
     "aws_cloud_logic_custom": [
         {
             "name": "contactEmailer",
-            "endpoint": "https://qi4tu2f0xl.execute-api.us-east-1.amazonaws.com/production",
+            "endpoint": "https://qy5g99rqqc.execute-api.us-east-1.amazonaws.com/staging",
             "region": "us-east-1"
         }
     ],
-    "aws_user_files_s3_bucket": "ddrlivecontent173028-production",
+    "aws_user_files_s3_bucket": "ddrlivecontent172220-staging",
     "aws_user_files_s3_bucket_region": "us-east-1"
 };
 
