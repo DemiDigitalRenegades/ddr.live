@@ -34,7 +34,7 @@ export const ContactSection = () => {
     } else {
       setSending(true)
       setFormError(false)
-      const apiName = 'contactEmailerApi'
+      const apiName = 'contactEmailer'
       const path = '/'
       const payload = {
         body: {
