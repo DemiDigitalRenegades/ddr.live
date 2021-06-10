@@ -4,7 +4,7 @@
 .env
 
 #amplify
-amplify/
+amplify/\#current-cloud-backend
 amplify/.config/local-*
 amplify/logs
 amplify/mock-data
@@ -14,11 +14,10 @@ amplify/backend/.temp
 build/
 dist/
 node_modules/
+aws-exports.js
 awsconfiguration.json
 amplifyconfiguration.json
 amplify-build-config.json
 amplify-gradle-config.json
 amplifytools.xcconfig
 .secret-*
-amplify/team-provider-info.json
-amplify/.config/project-config.json

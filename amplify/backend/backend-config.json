@@ -3,17 +3,26 @@
     "contactEmailerFunc": {
       "build": true,
       "providerPlugin": "awscloudformation",
-      "service": "Lambda"
+      "service": "Lambda",
+      "dependsOn": []
     },
-    "S3Trigger44fc533d": {
+    "S3Trigger52dd5d6d": {
       "service": "Lambda",
       "providerPlugin": "awscloudformation",
       "build": true,
       "dependsOn": []
     }
   },
+  "auth": {
+    "ddrlive79531353": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  },
   "api": {
-    "contactEmailerApi": {
+    "contactEmailer": {
       "service": "API Gateway",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
@@ -28,22 +37,14 @@
       ]
     }
   },
-  "auth": {
-    "ddrlive9ae5814d": {
-      "service": "Cognito",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [],
-      "customAuth": false
-    }
-  },
   "storage": {
-    "ddrliveStorage": {
+    "ddrLiveBucket": {
       "service": "S3",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "S3Trigger44fc533d",
+          "resourceName": "S3Trigger52dd5d6d",
           "attributes": [
             "Name",
             "Arn",

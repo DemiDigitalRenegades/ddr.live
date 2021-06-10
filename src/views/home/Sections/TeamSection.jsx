@@ -9,16 +9,9 @@ import { makeStyles } from '@material-ui/core/styles'
 // core components
 import GridContainer from 'components/Grid/GridContainer.js'
 import GridItem from 'components/Grid/GridItem.js'
-import Button from 'components/CustomButtons/Button.js'
-import Card from 'components/Card/Card.js'
-import CardBody from 'components/Card/CardBody.js'
-import CardFooter from 'components/Card/CardFooter.js'
-import { Container } from '@material-ui/core'
 import { TeamCard } from 'components/Card/TeamCard'
 
 import { Storage } from 'aws-amplify'
-import YAML from 'yaml'
-import fs from 'fs'
 
 import styles from 'assets/jss/material-kit-react/views/landingPageSections/teamStyle.js'
 
@@ -49,7 +42,6 @@ export const TeamSection = () => {
           contentType: 'application/json',
         }).then(async (resp) => {
           const json = await new Response(resp.Body).json()
-          console.log(json.TeamSection)
           setContentJson(json.TeamSection)
         })
       } catch (e) {
@@ -68,7 +60,7 @@ export const TeamSection = () => {
             <GridItem xs={12} sm={12} md={4}>
               <TeamCard
                 pic={MeikPic}
-                name='Meik'
+                name={contentJson?.Meik.name}
                 title={contentJson?.Meik.title}
                 bio={contentJson?.Meik.bio}
                 linkedin={contentJson?.Meik.linkedin}
@@ -77,7 +69,7 @@ export const TeamSection = () => {
             <GridItem xs={12} sm={12} md={4}>
               <TeamCard
                 pic={MarkPic}
-                name='Mark'
+                name={contentJson?.Mark.name}
                 title={contentJson?.Mark.title}
                 bio={contentJson?.Mark.bio}
               />
@@ -87,7 +79,7 @@ export const TeamSection = () => {
             <GridItem xs={12} sm={12} md={4}>
               <TeamCard
                 pic={LydiaPic}
-                name='Lydia'
+                name={contentJson?.Lydia.name}
                 title={contentJson?.Lydia.title}
                 bio={contentJson?.Lydia.bio}
               />
@@ -95,7 +87,7 @@ export const TeamSection = () => {
             <GridItem xs={12} sm={12} md={4}>
               <TeamCard
                 pic={PaulPic}
-                name='Paul'
+                name={contentJson?.Paul.name}
                 title={contentJson?.Paul.title}
                 bio={contentJson?.Paul.bio}
                 linkedin={contentJson?.Paul.linkedin}
@@ -104,7 +96,7 @@ export const TeamSection = () => {
             <GridItem xs={12} sm={12} md={4}>
               <TeamCard
                 pic={CameronPic}
-                name='Cameron'
+                name={contentJson?.Cameron.name}
                 title={contentJson?.Cameron.title}
                 bio={contentJson?.Cameron.bio}
               />
@@ -114,7 +106,7 @@ export const TeamSection = () => {
             <GridItem xs={12} sm={12} md={4}>
               <TeamCard
                 pic={RobPic}
-                name='Rob'
+                name={contentJson?.Rob.name}
                 title={contentJson?.Rob.title}
                 bio={contentJson?.Rob.bio}
                 github={contentJson?.Rob.github}
@@ -124,7 +116,7 @@ export const TeamSection = () => {
             <GridItem xs={12} sm={12} md={4}>
               <TeamCard
                 pic={DanPic}
-                name='Dan'
+                name={contentJson?.Dan.name}
                 title={contentJson?.Dan.title}
                 bio={contentJson?.Dan.bio}
               />

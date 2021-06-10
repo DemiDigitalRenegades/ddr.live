@@ -5,6 +5,7 @@
   "private": true,
   "main": "src/index.js",
   "dependencies": {
+    "@aws-amplify/ui-react": "^1.2.1",
     "@material-ui/core": "4.10.0",
     "@material-ui/icons": "4.9.1",
     "@use-it/interval": "^1.0.0",
@@ -23,6 +24,7 @@
     "react-router-dom": "5.2.0",
     "react-scripts": "3.4.1",
     "react-slick": "0.26.1",
+    "react-spring": "^9.2.1",
     "react-swipeable-views": "0.13.9",
     "read-yaml": "^1.1.0",
     "yaml": "^1.10.2"
