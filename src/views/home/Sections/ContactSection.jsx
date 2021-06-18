@@ -22,13 +22,14 @@ export const ContactSection = () => {
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
+  const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
   const [isSending, setSending] = useState(false)
   const [formError, setFormError] = useState(false)
   const [formSuccess, setFormSuccess] = useState(false)
 
   const handleSubmit = async () => {
-    if (name === '' || email === '' || message === '') {
+    if (name === '' || email === '' || message === '' || subject === '') {
       console.log('Please enter all values. Message not sent.')
       setFormError(true)
     } else {
@@ -39,7 +40,7 @@ export const ContactSection = () => {
       const payload = {
         body: {
           toEmails: ['contact@ddr.live'],
-          subject: name + ' - ' + email,
+          subject: subject + ' - ' + name + ' - ' + email,
           message: message,
         },
       }
@@ -62,6 +63,7 @@ export const ContactSection = () => {
     setName('')
     setEmail('')
     setMessage('')
+    setSubject('')
     console.log('clearing inputs')
   }
 
@@ -120,6 +122,20 @@ export const ContactSection = () => {
                   }}
                 />
               </GridItem>
+              <CustomInput
+                labelText='Subject'
+                id='subject'
+                value={subject}
+                formControlProps={{
+                  fullWidth: true,
+                  className: classes.textArea,
+                }}
+                inputProps={{
+                  required: true,
+                  rows: 5,
+                  onChange: (e) => setSubject(e.target.value),
+                }}
+              />
               <CustomInput
                 labelText='Your Message'
                 id='message'
