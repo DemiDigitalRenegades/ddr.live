@@ -33,7 +33,7 @@ export const TeamCard = (props) => {
         <p className={classes.description}>{bio}</p>
       </CardBody>
       <CardFooter className={classes.justifyCenter}>
-        {!linkedin == false && (
+        {!linkedin === false && (
           <Button
             justIcon
             color='transparent'
@@ -44,7 +44,7 @@ export const TeamCard = (props) => {
             <i className={classes.socials + ' fab fa-linkedin'} />
           </Button>
         )}
-        {!github == false && (
+        {!github === false && (
           <Button
             justIcon
             color='transparent'
@@ -55,7 +55,7 @@ export const TeamCard = (props) => {
             <i className={classes.socials + ' fab fa-github'} />
           </Button>
         )}
-        {!instagram == false && (
+        {!instagram === false && (
           <Button
             justIcon
             color='transparent'

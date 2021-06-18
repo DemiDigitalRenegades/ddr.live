@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 // nodejs library that concatenates classes
-import classNames from 'classnames'
+// import classNames from 'classnames'
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -27,11 +27,6 @@ const useStyles = makeStyles(styles)
 
 export const TeamSection = () => {
   const classes = useStyles()
-  const imageClasses = classNames(
-    classes.imgRaised,
-    classes.imgRoundedCircle,
-    classes.imgFluid
-  )
   const [contentJson, setContentJson] = useState(null)
 
   useEffect(() => {

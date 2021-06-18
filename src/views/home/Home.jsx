@@ -1,16 +1,9 @@
-import React, { useRef, forwardRef } from 'react'
-import {
-  Container,
-  Grid,
-  IconButton,
-  Hidden,
-  Typography,
-  Slide,
-} from '@material-ui/core'
+import React, { useRef } from 'react'
+import { Container, Grid, IconButton, Hidden, Slide } from '@material-ui/core'
 import Header from 'components/Header/Header'
 import { HeaderLinks } from 'components/Header/HeaderLinks'
 import { AboutUsSection } from './Sections/AboutUsSection'
-import { RecentWorkSection } from './Sections/RecentWorkSection'
+// import { RecentWorkSection } from './Sections/RecentWorkSection'
 import { ServicesSection } from './Sections/ServicesSection'
 import { ContactSection } from './Sections/ContactSection'
 import { TeamSection } from './Sections/TeamSection'
@@ -20,7 +13,7 @@ export const Home = () => {
   const landPageRef = useRef(null)
   const servicesRef = useRef(null)
   const aboutUsRef = useRef(null)
-  const recentWorkRef = useRef(null)
+  // const recentWorkRef = useRef(null)
   const teamRef = useRef(null)
   const contactRef = useRef(null)
 

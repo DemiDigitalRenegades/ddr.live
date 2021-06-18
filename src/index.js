@@ -6,7 +6,7 @@ import { Router, Route, Switch } from 'react-router-dom'
 import 'assets/scss/material-kit-react.scss?v=1.9.0'
 
 import { Home } from './views/home/Home'
-import Admin from './views/admin/Admin'
+// import Admin from './views/admin/Admin'
 import Footer from 'components/Footer/Footer.js'
 import Amplify from 'aws-amplify'
 import awsmobile from './aws-exports'
