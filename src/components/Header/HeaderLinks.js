@@ -51,7 +51,7 @@ export const HeaderLinks = (props) => {
           About Us
         </Button>
       </ListItem>
-      <ListItem className={classes.listItem}>
+      {/* <ListItem className={classes.listItem}>
         <Button
           color='transparent'
           onClick={() => {
@@ -60,7 +60,7 @@ export const HeaderLinks = (props) => {
           className={classes.navLink}>
           Meet the Team
         </Button>
-      </ListItem>
+      </ListItem> */}
       <ListItem className={classes.listItem}>
         <Button
           color='transparent'
