@@ -9,9 +9,9 @@ import { Home } from './views/home/Home'
 // import Admin from './views/admin/Admin'
 import Footer from 'components/Footer/Footer.js'
 import Amplify from 'aws-amplify'
-import awsmobile from './aws-exports'
+import awsconfig from './aws-exports'
 
-Amplify.configure(awsmobile)
+Amplify.configure(awsconfig)
 
 const hist = createBrowserHistory()
 
