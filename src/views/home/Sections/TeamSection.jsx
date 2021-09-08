@@ -114,6 +114,7 @@ export const TeamSection = () => {
                 name={contentJson?.Dan.name}
                 title={contentJson?.Dan.title}
                 bio={contentJson?.Dan.bio}
+                instagram={contentJson?.Dan.instagram}
               />
             </GridItem>
           </GridContainer>
