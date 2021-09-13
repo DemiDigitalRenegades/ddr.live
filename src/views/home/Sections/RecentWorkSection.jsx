@@ -12,6 +12,7 @@ import {
 import { makeStyles } from '@material-ui/core/styles'
 import styles from 'assets/jss/material-kit-react/views/landingPageSections/productStyle.js'
 import DonarooPoster from 'assets/img/recentwork/donaroo.jpg'
+// import VideoPlayer from 'VideoPlayer'
 
 const useStyles = makeStyles({
   media: {
@@ -52,9 +53,7 @@ export const RecentWorkSection = () => {
                 image={DonarooPoster}
                 title='Donaroo 2021'
               />
-              <CardContent className={classes.content}>
-                <h3 className={materialClasses.description}>Donaroo 2021</h3>
-              </CardContent>
+              <CardContent className={classes.content}></CardContent>
             </CardActionArea>
           </Card>
         </Grid>

@@ -24,6 +24,15 @@
           "deploymentBucketName": "amplify-ddrlive-dev-144443-deployment",
           "s3Key": "amplify-builds/contactEmailerFunc-6f735857617477515132-build.zip"
         }
+      },
+      "video": {
+        "DDRLiveRecentWork": {
+          "publicKey": "-----BEGIN PUBLIC KEY-----\\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAu27RFOmlVfAq1Ls6JCv3\\nkm3u5k0UWRwGxjqBIeOG4cn9bZQwbP7bVV/UB1LMxfxAylHwTUjLQcuw7XDfOU8Z\\ninY4P+0AQTx76ALjzOPGnaRckeJ+T+4UsUxbsjBFyiihTLY/QSYsy2VgOnuYAhx6\\nau2SGEXBepfHBRnkLTzEYp3mqkQU4P43M0EjjPLkhw75WpXkuwYKR2igSfk38cAm\\nNOp+uYNaPi2RLbdG8jLHRouNK+A+zklTCKHHmcsjMsJKDuw0vcVjLaXghFPtNP6W\\nfSndUv7TNdiuNCcR58zafooY0PeVSxGP4o8F2uc6JfJa8kparqxyzYpd4EK4Gysk\\n+QIDAQAB\\n-----END PUBLIC KEY-----\\n",
+          "rPublicName": "rCloudFrontPublicKeydevdiicqja0",
+          "publicKeyName": "DDRLiveRecentWork-dev-publickey-diicqja0",
+          "secretPem": "DDRLiveRecentWork-dev-pem-diicqja0",
+          "secretPemArn": "arn:aws:secretsmanager:us-east-1:482304656615:secret:DDRLiveRecentWork-dev-pem-diicqja0-sIUIgk"
+        }
       }
     }
   },
