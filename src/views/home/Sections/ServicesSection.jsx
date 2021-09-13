@@ -8,7 +8,7 @@ import Chat from '@material-ui/icons/Chat'
 import SettingsInputComponentIcon from '@material-ui/icons/SettingsInputComponent'
 import LocalPlayIcon from '@material-ui/icons/LocalPlay'
 import BrushIcon from '@material-ui/icons/Brush'
-import AlbumIcon from '@material-ui/icons/Album'
+import BuildIcon from '@material-ui/icons/Build'
 import GroupIcon from '@material-ui/icons/Group'
 // core components
 import GridContainer from 'components/Grid/GridContainer.js'
@@ -75,7 +75,7 @@ export const ServicesSection = () => {
             <InfoArea
               title={contentJson?.Cards.Row1.Card3.title}
               description={contentJson?.Cards.Row1.Card3.body}
-              icon={SettingsInputComponentIcon}
+              icon={BrushIcon}
               iconColor='danger'
               vertical
             />
@@ -84,7 +84,7 @@ export const ServicesSection = () => {
             <InfoArea
               title={contentJson?.Cards.Row2.Card1.title}
               description={contentJson?.Cards.Row2.Card1.body}
-              icon={BrushIcon}
+              icon={BuildIcon}
               iconColor='primary'
               vertical
             />
@@ -93,7 +93,7 @@ export const ServicesSection = () => {
             <InfoArea
               title={contentJson?.Cards.Row2.Card2.title}
               description={contentJson?.Cards.Row2.Card2.body}
-              icon={AlbumIcon}
+              icon={SettingsInputComponentIcon}
               iconColor='danger'
               vertical
             />

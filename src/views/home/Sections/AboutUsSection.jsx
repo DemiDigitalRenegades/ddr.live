@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Grid } from '@material-ui/core'
+import { ButtonBase, Grid, Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import styles from 'assets/jss/material-kit-react/views/landingPageSections/productStyle.js'
 import { AboutUsCard } from 'components/Card/AboutUsCard'
@@ -7,10 +7,13 @@ import { Storage } from 'aws-amplify'
 
 const useStyles = makeStyles(styles)
 
-export const AboutUsSection = () => {
+export const AboutUsSection = (props) => {
   const classes = useStyles()
-
+  const { scrollRef } = props
   const [contentJson, setContentJson] = useState(null)
+
+  const executeScroll = (ref) =>
+    ref.current.scrollIntoView({ behavior: 'smooth' })
 
   useEffect(() => {
     async function getJSON() {
@@ -30,9 +33,16 @@ export const AboutUsSection = () => {
     getJSON()
   }, [])
 
+  // TODO
+  // Add button on "Start today"
+  // Move first sentence of Our Story to own section.
+
   return (
     <div className={classes.section}>
-      <h2 className={classes.title}>About Us</h2>
+      <h2 className={classes.title}>{contentJson?.SectionTop.title}</h2>
+      <Typography className={classes.description}>
+        {contentJson?.SectionTop.body}
+      </Typography>
       <Grid
         container
         justify='center'
@@ -54,10 +64,15 @@ export const AboutUsSection = () => {
               />
             </Grid>
             <Grid item xs={12} sm={12} md={6}>
-              <AboutUsCard
-                title={contentJson?.RightBottom.title}
-                body={contentJson?.RightBottom.body}
-              />
+              <ButtonBase
+                onClick={() => {
+                  executeScroll(scrollRef)
+                }}>
+                <AboutUsCard
+                  title={contentJson?.RightBottom.title}
+                  body={contentJson?.RightBottom.body}
+                />
+              </ButtonBase>
             </Grid>
           </Grid>
         </Grid>

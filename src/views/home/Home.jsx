@@ -1,9 +1,16 @@
 import React, { useRef } from 'react'
-import { Container, Grid, IconButton, Hidden, Slide } from '@material-ui/core'
+import {
+  Container,
+  Grid,
+  IconButton,
+  Hidden,
+  Slide,
+  Typography,
+} from '@material-ui/core'
 import Header from 'components/Header/Header'
 import { HeaderLinks } from 'components/Header/HeaderLinks'
 import { AboutUsSection } from './Sections/AboutUsSection'
-// import { RecentWorkSection } from './Sections/RecentWorkSection'
+import { RecentWorkSection } from './Sections/RecentWorkSection'
 import { ServicesSection } from './Sections/ServicesSection'
 import { ContactSection } from './Sections/ContactSection'
 import { TeamSection } from './Sections/TeamSection'
@@ -55,14 +62,23 @@ export const Home = () => {
           }}></div>
         <Hidden smDown>
           <br></br>
-          <Grid container justify='center' alignItems='center'>
-            <IconButton
-              color='primary'
-              onClick={() => executeScroll(servicesRef)}>
-              <Slide in direction={'up'} timeout={{ enter: 2000 }}>
-                <ExpandMoreIcon fontSize='large' />
-              </Slide>
-            </IconButton>
+          <Grid
+            container
+            direction='column'
+            justify='center'
+            alignItems='center'>
+            <Grid item xs>
+              <Typography>Create without restriction</Typography>
+            </Grid>
+            <Grid item xs>
+              <IconButton
+                color='primary'
+                onClick={() => executeScroll(servicesRef)}>
+                <Slide in direction={'up'} timeout={{ enter: 2000 }}>
+                  <ExpandMoreIcon fontSize='large' />
+                </Slide>
+              </IconButton>
+            </Grid>
           </Grid>
         </Hidden>
       </Container>
@@ -76,7 +92,7 @@ export const Home = () => {
             <RecentWorkSection />
           </Grid> */}
           <Grid item xs ref={aboutUsRef}>
-            <AboutUsSection />
+            <AboutUsSection scrollRef={contactRef} />
           </Grid>
           <Grid item xs ref={teamRef}>
             <TeamSection />

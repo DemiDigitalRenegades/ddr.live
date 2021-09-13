@@ -36,7 +36,7 @@ export const RecentWorkSection = () => {
       alignItems='center'
       spacing={2}>
       <Grid item xs>
-        <h2 className={materialClasses.title}>Past Events</h2>
+        <h2 className={materialClasses.title}>Recent Work</h2>
       </Grid>
       <Grid
         container
@@ -54,22 +54,6 @@ export const RecentWorkSection = () => {
               />
               <CardContent className={classes.content}>
                 <h3 className={materialClasses.description}>Donaroo 2021</h3>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Grid>
-        <Grid item xs={12} sm={12} md={6}>
-          <Card>
-            <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image={DonarooPoster}
-                title='Donaroo 2021'
-              />
-              <CardContent className={classes.content}>
-                <h3 className={materialClasses.description}>
-                  40 Hour Work Week
-                </h3>
               </CardContent>
             </CardActionArea>
           </Card>
