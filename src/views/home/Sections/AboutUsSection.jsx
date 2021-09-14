@@ -56,7 +56,7 @@ export const AboutUsSection = (props) => {
           />
         </Grid>
         <Grid item xs>
-          <Grid container justify='center' alignItems='center' spacing={2}>
+          <Grid container justify='center' spacing={2}>
             <Grid item xs={12} sm={12} md={6}>
               <AboutUsCard
                 title={contentJson?.LeftBottom.title}
