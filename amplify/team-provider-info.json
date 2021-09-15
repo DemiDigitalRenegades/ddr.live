@@ -13,7 +13,8 @@
     },
     "categories": {
       "auth": {
-        "ddrlive79531353": {}
+        "ddrlive79531353": {},
+        "userPoolGroups": {}
       },
       "function": {
         "S3Trigger52dd5d6d": {
@@ -32,6 +33,9 @@
           "publicKeyName": "DDRLiveRecentWork-dev-publickey-diicqja0",
           "secretPem": "DDRLiveRecentWork-dev-pem-diicqja0",
           "secretPemArn": "arn:aws:secretsmanager:us-east-1:482304656615:secret:DDRLiveRecentWork-dev-pem-diicqja0-sIUIgk"
+        },
+        "ddrLiveVideo": {
+          "s3UUID": "wrttlbfk"
         }
       }
     }

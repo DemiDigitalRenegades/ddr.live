@@ -1,25 +1,23 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   Grid,
   Typography,
   Card,
   CardContent,
-  CardMedia,
   CardActionArea,
-  CardActions,
-  Button,
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import styles from 'assets/jss/material-kit-react/views/landingPageSections/productStyle.js'
-import DonarooPoster from 'assets/img/recentwork/donaroo.jpg'
-// import VideoPlayer from 'VideoPlayer'
+import VideoPlayer from '../VideoPlayer/VideoPlayer'
+import * as queries from '../../../graphql/queries'
+import { API } from 'aws-amplify'
+import awsvideo from '../../../aws-video-exports'
 
 const useStyles = makeStyles({
-  media: {
-    height: 250,
-  },
   content: {
-    background: 'black',
+    border: '1.5px solid #3C4858',
+    color: '#999',
+    background: '#0c0c0c',
   },
 })
 
@@ -28,14 +26,22 @@ const useMaterialStyle = makeStyles(styles)
 export const RecentWorkSection = () => {
   const classes = useStyles()
   const materialClasses = useMaterialStyle()
+  const [videos, setVideos] = useState()
+
+  const getAssets = async () => {
+    const assets = await API.graphql({
+      query: queries.listVodAssets,
+      authMode: 'API_KEY',
+    })
+    setVideos(assets.data.listVodAssets.items)
+  }
+
+  useEffect(() => {
+    getAssets()
+  }, [])
 
   return (
-    <Grid
-      container
-      direction='column'
-      justify='center'
-      alignItems='center'
-      spacing={2}>
+    <Grid container direction='column' justify='center' alignItems='center'>
       <Grid item xs>
         <h2 className={materialClasses.title}>Recent Work</h2>
       </Grid>
@@ -45,18 +51,36 @@ export const RecentWorkSection = () => {
         justify='center'
         alignItems='center'
         spacing={6}>
-        <Grid item xs={12} sm={12} md={6}>
-          <Card>
-            <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image={DonarooPoster}
-                title='Donaroo 2021'
-              />
-              <CardContent className={classes.content}></CardContent>
-            </CardActionArea>
-          </Card>
-        </Grid>
+        {videos &&
+          videos.map((item) => (
+            <Grid item xs={12} sm={12} md={6}>
+              <Card
+                className={classes.content}
+                variant='outlined'
+                key={item.id}>
+                <VideoPlayer
+                  controls
+                  fluid
+                  sources={[
+                    {
+                      src: `https://${awsvideo.awsOutputVideo}/${item.video.id}/${item.video.id}.m3u8`,
+                      type: 'application/x-mpegURL',
+                    },
+                  ]}
+                />
+                <CardActionArea>
+                  <CardContent>
+                    <Typography gutterBottom variant='h5' component='h2'>
+                      {item.title}
+                    </Typography>
+                    <Typography variant='body2' component='p'>
+                      {item.description}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Grid>
+          ))}
       </Grid>
     </Grid>
   )

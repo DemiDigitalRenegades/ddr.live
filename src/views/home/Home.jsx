@@ -20,7 +20,7 @@ export const Home = () => {
   const landPageRef = useRef(null)
   const servicesRef = useRef(null)
   const aboutUsRef = useRef(null)
-  // const recentWorkRef = useRef(null)
+  const recentWorkRef = useRef(null)
   const teamRef = useRef(null)
   const contactRef = useRef(null)
 
@@ -40,6 +40,7 @@ export const Home = () => {
           <HeaderLinks
             executeScroll={executeScroll}
             servicesRef={servicesRef}
+            recentWorkRef={recentWorkRef}
             aboutUsRef={aboutUsRef}
             teamRef={teamRef}
             contactRef={contactRef}
@@ -88,9 +89,11 @@ export const Home = () => {
           <Grid item xs ref={servicesRef}>
             <ServicesSection />
           </Grid>
-          {/* <Grid item xs>
+          <br ref={recentWorkRef} />
+          <br />
+          <Grid item xs container>
             <RecentWorkSection />
-          </Grid> */}
+          </Grid>
           <Grid item xs ref={aboutUsRef}>
             <AboutUsSection scrollRef={contactRef} />
           </Grid>

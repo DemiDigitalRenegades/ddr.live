@@ -6,6 +6,7 @@ import {
   Button,
   makeStyles,
 } from '@material-ui/core'
+import { UserMenu } from './UserMenu'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,6 +35,7 @@ export const Topbar = (props) => {
             {item.name}
           </Button>
         ))}
+        <UserMenu />
       </Toolbar>
     </AppBar>
   )

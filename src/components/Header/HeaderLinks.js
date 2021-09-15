@@ -27,7 +27,14 @@ const useStyles = makeStyles(styles)
 
 export const HeaderLinks = (props) => {
   const classes = useStyles()
-  const { executeScroll, servicesRef, aboutUsRef, teamRef, contactRef } = props
+  const {
+    executeScroll,
+    servicesRef,
+    aboutUsRef,
+    teamRef,
+    contactRef,
+    recentWorkRef,
+  } = props
 
   return (
     <List className={classes.list}>
@@ -39,6 +46,16 @@ export const HeaderLinks = (props) => {
           }}
           className={classes.navLink}>
           Our Services
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button
+          color='transparent'
+          onClick={() => {
+            executeScroll(recentWorkRef)
+          }}
+          className={classes.navLink}>
+          Recent Work
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>

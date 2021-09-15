@@ -39,7 +39,7 @@ export const AboutUsSection = (props) => {
 
   return (
     <div className={classes.section}>
-      <h2 className={classes.title}>{contentJson?.SectionTop.title}</h2>
+      <h2 className={classes.title}>About Us</h2>
       <Typography className={classes.description}>
         {contentJson?.SectionTop.body}
       </Typography>
@@ -56,25 +56,21 @@ export const AboutUsSection = (props) => {
           />
         </Grid>
         <Grid item xs>
-          <Grid container justify='center' spacing={2}>
-            <Grid item xs={12} sm={12} md={6}>
-              <AboutUsCard
-                title={contentJson?.LeftBottom.title}
-                body={contentJson?.LeftBottom.body}
-              />
-            </Grid>
-            <Grid item xs={12} sm={12} md={6}>
-              <ButtonBase
-                onClick={() => {
-                  executeScroll(scrollRef)
-                }}>
-                <AboutUsCard
-                  title={contentJson?.RightBottom.title}
-                  body={contentJson?.RightBottom.body}
-                />
-              </ButtonBase>
-            </Grid>
-          </Grid>
+          <AboutUsCard
+            title={contentJson?.LeftBottom.title}
+            body={contentJson?.LeftBottom.body}
+          />
+        </Grid>
+        <Grid item xs>
+          <ButtonBase
+            onClick={() => {
+              executeScroll(scrollRef)
+            }}>
+            <AboutUsCard
+              title={contentJson?.RightBottom.title}
+              body={contentJson?.RightBottom.body}
+            />
+          </ButtonBase>
         </Grid>
       </Grid>
     </div>

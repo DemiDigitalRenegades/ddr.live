@@ -15,6 +15,7 @@ build/
 dist/
 node_modules/
 src/aws-exports.js
+src/aws-video-exports.js
 awsconfiguration.json
 amplifyconfiguration.json
 amplify-build-config.json
