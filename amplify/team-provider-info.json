@@ -1,4 +1,60 @@
 {
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ddrlive-staging-172220-authRole",
+      "UnauthRoleArn": "arn:aws:iam::482304656615:role/amplify-ddrlive-staging-172220-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::482304656615:role/amplify-ddrlive-staging-172220-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-ddrlive-staging-172220-deployment",
+      "UnauthRoleName": "amplify-ddrlive-staging-172220-unauthRole",
+      "StackName": "amplify-ddrlive-staging-172220",
+      "StackId": "arn:aws:cloudformation:us-east-1:482304656615:stack/amplify-ddrlive-staging-172220/9b3ec970-c9bc-11eb-8080-0e23aa861d3d",
+      "AmplifyAppId": "d2bc7kpcq5fi2c"
+    },
+    "categories": {
+      "auth": {
+        "ddrlive79531353": {}
+      },
+      "function": {
+        "contactEmailerFunc": {
+          "deploymentBucketName": "amplify-ddrlive-staging-172220-deployment",
+          "s3Key": "amplify-builds/contactEmailerFunc-6f735857617477515132-build.zip"
+        },
+        "S3Trigger52dd5d6d": {
+          "deploymentBucketName": "amplify-ddrlive-staging-172220-deployment",
+          "s3Key": "amplify-builds/S3Trigger52dd5d6d-70787167683869397264-build.zip"
+        }
+      }
+    }
+  },
+  "production": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ddrlive-production-173028-authRole",
+      "UnauthRoleArn": "arn:aws:iam::482304656615:role/amplify-ddrlive-production-173028-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::482304656615:role/amplify-ddrlive-production-173028-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-ddrlive-production-173028-deployment",
+      "UnauthRoleName": "amplify-ddrlive-production-173028-unauthRole",
+      "StackName": "amplify-ddrlive-production-173028",
+      "StackId": "arn:aws:cloudformation:us-east-1:482304656615:stack/amplify-ddrlive-production-173028/bd9ce4b0-c9bd-11eb-a56a-0e1db4f6fc3b",
+      "AmplifyAppId": "d2bc7kpcq5fi2c"
+    },
+    "categories": {
+      "auth": {
+        "ddrlive79531353": {}
+      },
+      "function": {
+        "contactEmailerFunc": {
+          "deploymentBucketName": "amplify-ddrlive-production-173028-deployment",
+          "s3Key": "amplify-builds/contactEmailerFunc-6f735857617477515132-build.zip"
+        },
+        "S3Trigger52dd5d6d": {
+          "deploymentBucketName": "amplify-ddrlive-production-173028-deployment",
+          "s3Key": "amplify-builds/S3Trigger52dd5d6d-70787167683869397264-build.zip"
+        }
+      }
+    }
+  },
   "dev": {
     "awscloudformation": {
       "AuthRoleName": "amplify-ddrlive-dev-144443-authRole",
