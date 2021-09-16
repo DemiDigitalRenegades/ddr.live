@@ -48,16 +48,18 @@ export const HeaderLinks = (props) => {
           Our Services
         </Button>
       </ListItem>
-      <ListItem className={classes.listItem}>
-        <Button
-          color='transparent'
-          onClick={() => {
-            executeScroll(recentWorkRef)
-          }}
-          className={classes.navLink}>
-          Recent Work
-        </Button>
-      </ListItem>
+      {recentWorkRef && (
+        <ListItem className={classes.listItem}>
+          <Button
+            color='transparent'
+            onClick={() => {
+              executeScroll(recentWorkRef)
+            }}
+            className={classes.navLink}>
+            Recent Work
+          </Button>
+        </ListItem>
+      )}
       <ListItem className={classes.listItem}>
         <Button
           color='transparent'
