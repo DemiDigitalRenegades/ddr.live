@@ -13,7 +13,8 @@
     },
     "categories": {
       "auth": {
-        "ddrlive79531353": {}
+        "ddrlive79531353": {},
+        "userPoolGroups": {}
       },
       "function": {
         "contactEmailerFunc": {
@@ -23,6 +24,11 @@
         "S3Trigger52dd5d6d": {
           "deploymentBucketName": "amplify-ddrlive-staging-172220-deployment",
           "s3Key": "amplify-builds/S3Trigger52dd5d6d-70787167683869397264-build.zip"
+        }
+      },
+      "video": {
+        "ddrLiveVideo": {
+          "s3UUID": "zzlhx8gx806u"
         }
       }
     }
@@ -41,7 +47,8 @@
     },
     "categories": {
       "auth": {
-        "ddrlive79531353": {}
+        "ddrlive79531353": {},
+        "userPoolGroups": {}
       },
       "function": {
         "contactEmailerFunc": {
@@ -51,6 +58,11 @@
         "S3Trigger52dd5d6d": {
           "deploymentBucketName": "amplify-ddrlive-production-173028-deployment",
           "s3Key": "amplify-builds/S3Trigger52dd5d6d-70787167683869397264-build.zip"
+        }
+      },
+      "video": {
+        "ddrLiveVideo": {
+          "s3UUID": "jttolvtns12p"
         }
       }
     }
