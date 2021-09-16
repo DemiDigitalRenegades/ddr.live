@@ -21,6 +21,7 @@
     "moment": "2.26.0",
     "node-sass": "4.14.1",
     "nouislider": "14.5.0",
+    "npm": "^7.23.0",
     "prop-types": "15.7.2",
     "react": "16.13.1",
     "react-datepicker": "^4.2.1",

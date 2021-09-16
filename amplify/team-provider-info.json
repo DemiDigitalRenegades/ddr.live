@@ -17,81 +17,18 @@
         "userPoolGroups": {}
       },
       "function": {
-        "S3Trigger52dd5d6d": {
-          "deploymentBucketName": "amplify-ddrlive-dev-144443-deployment",
-          "s3Key": "amplify-builds/S3Trigger52dd5d6d-70787167683869397264-build.zip"
-        },
         "contactEmailerFunc": {
           "deploymentBucketName": "amplify-ddrlive-dev-144443-deployment",
           "s3Key": "amplify-builds/contactEmailerFunc-6f735857617477515132-build.zip"
+        },
+        "S3Trigger52dd5d6d": {
+          "deploymentBucketName": "amplify-ddrlive-dev-144443-deployment",
+          "s3Key": "amplify-builds/S3Trigger52dd5d6d-70787167683869397264-build.zip"
         }
       },
       "video": {
-        "DDRLiveRecentWork": {
-          "publicKey": "-----BEGIN PUBLIC KEY-----\\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAu27RFOmlVfAq1Ls6JCv3\\nkm3u5k0UWRwGxjqBIeOG4cn9bZQwbP7bVV/UB1LMxfxAylHwTUjLQcuw7XDfOU8Z\\ninY4P+0AQTx76ALjzOPGnaRckeJ+T+4UsUxbsjBFyiihTLY/QSYsy2VgOnuYAhx6\\nau2SGEXBepfHBRnkLTzEYp3mqkQU4P43M0EjjPLkhw75WpXkuwYKR2igSfk38cAm\\nNOp+uYNaPi2RLbdG8jLHRouNK+A+zklTCKHHmcsjMsJKDuw0vcVjLaXghFPtNP6W\\nfSndUv7TNdiuNCcR58zafooY0PeVSxGP4o8F2uc6JfJa8kparqxyzYpd4EK4Gysk\\n+QIDAQAB\\n-----END PUBLIC KEY-----\\n",
-          "rPublicName": "rCloudFrontPublicKeydevdiicqja0",
-          "publicKeyName": "DDRLiveRecentWork-dev-publickey-diicqja0",
-          "secretPem": "DDRLiveRecentWork-dev-pem-diicqja0",
-          "secretPemArn": "arn:aws:secretsmanager:us-east-1:482304656615:secret:DDRLiveRecentWork-dev-pem-diicqja0-sIUIgk"
-        },
         "ddrLiveVideo": {
-          "s3UUID": "wrttlbfk"
-        }
-      }
-    }
-  },
-  "staging": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-ddrlive-staging-172220-authRole",
-      "UnauthRoleArn": "arn:aws:iam::482304656615:role/amplify-ddrlive-staging-172220-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::482304656615:role/amplify-ddrlive-staging-172220-authRole",
-      "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-ddrlive-staging-172220-deployment",
-      "UnauthRoleName": "amplify-ddrlive-staging-172220-unauthRole",
-      "StackName": "amplify-ddrlive-staging-172220",
-      "StackId": "arn:aws:cloudformation:us-east-1:482304656615:stack/amplify-ddrlive-staging-172220/9b3ec970-c9bc-11eb-8080-0e23aa861d3d",
-      "AmplifyAppId": "d2bc7kpcq5fi2c"
-    },
-    "categories": {
-      "auth": {
-        "ddrlive79531353": {}
-      },
-      "function": {
-        "contactEmailerFunc": {
-          "deploymentBucketName": "amplify-ddrlive-staging-172220-deployment",
-          "s3Key": "amplify-builds/contactEmailerFunc-6f735857617477515132-build.zip"
-        },
-        "S3Trigger52dd5d6d": {
-          "deploymentBucketName": "amplify-ddrlive-staging-172220-deployment",
-          "s3Key": "amplify-builds/S3Trigger52dd5d6d-70787167683869397264-build.zip"
-        }
-      }
-    }
-  },
-  "production": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-ddrlive-production-173028-authRole",
-      "UnauthRoleArn": "arn:aws:iam::482304656615:role/amplify-ddrlive-production-173028-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::482304656615:role/amplify-ddrlive-production-173028-authRole",
-      "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-ddrlive-production-173028-deployment",
-      "UnauthRoleName": "amplify-ddrlive-production-173028-unauthRole",
-      "StackName": "amplify-ddrlive-production-173028",
-      "StackId": "arn:aws:cloudformation:us-east-1:482304656615:stack/amplify-ddrlive-production-173028/bd9ce4b0-c9bd-11eb-a56a-0e1db4f6fc3b",
-      "AmplifyAppId": "d2bc7kpcq5fi2c"
-    },
-    "categories": {
-      "auth": {
-        "ddrlive79531353": {}
-      },
-      "function": {
-        "contactEmailerFunc": {
-          "deploymentBucketName": "amplify-ddrlive-production-173028-deployment",
-          "s3Key": "amplify-builds/contactEmailerFunc-6f735857617477515132-build.zip"
-        },
-        "S3Trigger52dd5d6d": {
-          "deploymentBucketName": "amplify-ddrlive-production-173028-deployment",
-          "s3Key": "amplify-builds/S3Trigger52dd5d6d-70787167683869397264-build.zip"
+          "s3UUID": "emubkkwngbrr"
         }
       }
     }
