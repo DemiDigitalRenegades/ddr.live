@@ -34,10 +34,17 @@ export const HeaderLinks = (props) => {
     teamRef,
     contactRef,
     recentWorkRef,
+    showVod,
   } = props
+
+  const openInNewTab = (url) => {
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+    if (newWindow) newWindow.opener = null
+  }
 
   return (
     <List className={classes.list}>
+      
       <ListItem className={classes.listItem}>
         <Button
           color='transparent'
@@ -56,10 +63,11 @@ export const HeaderLinks = (props) => {
               executeScroll(recentWorkRef)
             }}
             className={classes.navLink}>
-            Recent Work
+            VoD Demo
           </Button>
         </ListItem>
       )}
+      
       <ListItem className={classes.listItem}>
         <Button
           color='transparent'
@@ -90,6 +98,18 @@ export const HeaderLinks = (props) => {
           Contact Us
         </Button>
       </ListItem>
+      {showVod && (
+        <ListItem className={classes.listItem}>
+          <Button
+            color='transparent'
+            onClick={() => {
+              openInNewTab(process.env.REACT_APP_VOD_LINK)
+            }}
+            className={classes.navLink}>
+            VOD
+          </Button>
+        </ListItem>
+      )}
       <ListItem className={classes.listItem}>
         <Tooltip
           id='instagram-tooltip'
@@ -105,6 +125,7 @@ export const HeaderLinks = (props) => {
           </Button>
         </Tooltip>
       </ListItem>
+      
     </List>
   )
 }

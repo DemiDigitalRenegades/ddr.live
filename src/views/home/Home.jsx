@@ -10,7 +10,7 @@ import {
 import Header from 'components/Header/Header'
 import { HeaderLinks } from 'components/Header/HeaderLinks'
 import { AboutUsSection } from './Sections/AboutUsSection'
-import { RecentWorkSection } from './Sections/RecentWorkSection'
+// import { RecentWorkSection } from './Sections/RecentWorkSection'
 import { ServicesSection } from './Sections/ServicesSection'
 import { ContactSection } from './Sections/ContactSection'
 import { TeamSection } from './Sections/TeamSection'
@@ -20,7 +20,7 @@ export const Home = () => {
   const landPageRef = useRef(null)
   const servicesRef = useRef(null)
   const aboutUsRef = useRef(null)
-  const recentWorkRef = useRef(null)
+  // const recentWorkRef = useRef(null)
   const teamRef = useRef(null)
   const contactRef = useRef(null)
 
@@ -40,10 +40,11 @@ export const Home = () => {
           <HeaderLinks
             executeScroll={executeScroll}
             servicesRef={servicesRef}
-            recentWorkRef={recentWorkRef}
+            // recentWorkRef={recentWorkRef}
             aboutUsRef={aboutUsRef}
             teamRef={teamRef}
             contactRef={contactRef}
+            showVod={true}
           />
         }
       />
@@ -89,11 +90,11 @@ export const Home = () => {
           <Grid item xs ref={servicesRef}>
             <ServicesSection />
           </Grid>
-          <br ref={recentWorkRef} />
-          <br />
-          <Grid item xs container>
+          {/* <br ref={recentWorkRef} />
+          <br /> */}
+          {/* <Grid item xs container>
             <RecentWorkSection />
-          </Grid>
+          </Grid> */}
           <Grid item xs ref={aboutUsRef}>
             <AboutUsSection scrollRef={contactRef} />
           </Grid>

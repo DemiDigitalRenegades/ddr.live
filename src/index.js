@@ -6,7 +6,6 @@ import { Router, Route, Switch } from 'react-router-dom'
 import 'assets/scss/material-kit-react.scss?v=1.9.0'
 
 import { Home } from './views/home/Home'
-import Admin from './views/admin/Admin'
 import Footer from 'components/Footer/Footer.js'
 import Amplify from 'aws-amplify'
 import awsconfig from './aws-exports'
@@ -21,7 +20,6 @@ ReactDOM.render(
       <Router history={hist}>
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route exact path='/admin' component={Admin} />
         </Switch>
       </Router>
     </div>

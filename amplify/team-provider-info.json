@@ -80,10 +80,6 @@
       "AmplifyAppId": "d2bc7kpcq5fi2c"
     },
     "categories": {
-      "auth": {
-        "ddrlive79531353": {},
-        "userPoolGroups": {}
-      },
       "function": {
         "contactEmailerFunc": {
           "deploymentBucketName": "amplify-ddrlive-dev-144443-deployment",
@@ -94,10 +90,8 @@
           "s3Key": "amplify-builds/S3Trigger52dd5d6d-70787167683869397264-build.zip"
         }
       },
-      "video": {
-        "ddrLiveVideo": {
-          "s3UUID": "emubkkwngbrr"
-        }
+      "auth": {
+        "false": {}
       }
     }
   }
