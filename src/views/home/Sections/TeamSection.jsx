@@ -1,57 +1,56 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 // nodejs library that concatenates classes
 // import classNames from 'classnames'
 // @material-ui/core components
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from "@material-ui/core/styles";
 
 // @material-ui/icons
 
 // core components
-import GridContainer from 'components/Grid/GridContainer.js'
-import GridItem from 'components/Grid/GridItem.js'
-import { TeamCard } from 'components/Card/TeamCard'
+import GridContainer from "components/Grid/GridContainer.js";
+import GridItem from "components/Grid/GridItem.js";
+import { TeamCard } from "components/Card/TeamCard";
 
-import { Storage } from 'aws-amplify'
+import { Storage } from "aws-amplify";
 
-import styles from 'assets/jss/material-kit-react/views/landingPageSections/teamStyle.js'
+import styles from "assets/jss/material-kit-react/views/landingPageSections/teamStyle.js";
 
-import MeikPic from 'assets/img/faces/Meik.jpg'
-import MarkPic from 'assets/img/faces/Mark.jpg'
-import LydiaPic from 'assets/img/faces/Lydia.jpg'
-import CameronPic from 'assets/img/faces/Cameron.jpg'
-import RobPic from 'assets/img/faces/Rob.jpg'
-import PaulPic from 'assets/img/faces/Paul.jpg'
-import DanPic from 'assets/img/faces/Dan.jpg'
+import MeikPic from "assets/img/faces/Meik.jpg";
+import MarkPic from "assets/img/faces/Mark.jpg";
+import LydiaPic from "assets/img/faces/Lydia.jpg";
+import CameronPic from "assets/img/faces/Cameron.jpg";
+import RobPic from "assets/img/faces/Rob.jpg";
+import DanPic from "assets/img/faces/Dan.jpg";
 
-const useStyles = makeStyles(styles)
+const useStyles = makeStyles(styles);
 
 export const TeamSection = () => {
-  const classes = useStyles()
-  const [contentJson, setContentJson] = useState(null)
+  const classes = useStyles();
+  const [contentJson, setContentJson] = useState(null);
 
   useEffect(() => {
     async function getJSON() {
       try {
-        await Storage.get('TeamSection.json', {
+        await Storage.get("TeamSection.json", {
           download: true,
-          contentType: 'application/json',
+          contentType: "application/json",
         }).then(async (resp) => {
-          const json = await new Response(resp.Body).json()
-          setContentJson(json.TeamSection)
-        })
+          const json = await new Response(resp.Body).json();
+          setContentJson(json.TeamSection);
+        });
       } catch (e) {
-        console.log('error: ', e)
+        console.log("error: ", e);
       }
     }
-    getJSON()
-  }, [])
+    getJSON();
+  }, []);
 
   return (
     <div className={classes.section}>
       <h2 className={classes.title}>Our team</h2>
       <div>
-        <GridContainer alignItems='center' justify='center'>
-          <GridContainer justify='center'>
+        <GridContainer alignItems="center" justify="center">
+          <GridContainer justify="center">
             <GridItem xs={12} sm={12} md={4}>
               <TeamCard
                 pic={MeikPic}
@@ -70,22 +69,13 @@ export const TeamSection = () => {
               />
             </GridItem>
           </GridContainer>
-          <GridContainer justify='center'>
+          <GridContainer justify="center">
             <GridItem xs={12} sm={12} md={4}>
               <TeamCard
                 pic={LydiaPic}
                 name={contentJson?.Lydia.name}
                 title={contentJson?.Lydia.title}
                 bio={contentJson?.Lydia.bio}
-              />
-            </GridItem>
-            <GridItem xs={12} sm={12} md={4}>
-              <TeamCard
-                pic={PaulPic}
-                name={contentJson?.Paul.name}
-                title={contentJson?.Paul.title}
-                bio={contentJson?.Paul.bio}
-                linkedin={contentJson?.Paul.linkedin}
               />
             </GridItem>
             <GridItem xs={12} sm={12} md={4}>
@@ -97,7 +87,7 @@ export const TeamSection = () => {
               />
             </GridItem>
           </GridContainer>
-          <GridContainer justify='center'>
+          <GridContainer justify="center">
             <GridItem xs={12} sm={12} md={4}>
               <TeamCard
                 pic={RobPic}
@@ -121,5 +111,5 @@ export const TeamSection = () => {
         </GridContainer>
       </div>
     </div>
-  )
-}
+  );
+};
