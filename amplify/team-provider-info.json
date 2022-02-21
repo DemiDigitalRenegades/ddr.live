@@ -12,10 +12,6 @@
       "AmplifyAppId": "d2bc7kpcq5fi2c"
     },
     "categories": {
-      "auth": {
-        "ddrlive79531353": {},
-        "userPoolGroups": {}
-      },
       "function": {
         "contactEmailerFunc": {
           "deploymentBucketName": "amplify-ddrlive-staging-172220-deployment",
@@ -30,6 +26,9 @@
         "ddrLiveVideo": {
           "s3UUID": "zzlhx8gx806u"
         }
+      },
+      "auth": {
+        "ddrlive": {}
       }
     }
   },
@@ -46,10 +45,6 @@
       "AmplifyAppId": "d2bc7kpcq5fi2c"
     },
     "categories": {
-      "auth": {
-        "ddrlive79531353": {},
-        "userPoolGroups": {}
-      },
       "function": {
         "contactEmailerFunc": {
           "deploymentBucketName": "amplify-ddrlive-production-173028-deployment",
@@ -64,6 +59,9 @@
         "ddrLiveVideo": {
           "s3UUID": "jttolvtns12p"
         }
+      },
+      "auth": {
+        "ddrlive": {}
       }
     }
   },
