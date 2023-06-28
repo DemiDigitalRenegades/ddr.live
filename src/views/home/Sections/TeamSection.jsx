@@ -70,7 +70,7 @@ export const TeamSection = () => {
             </GridItem>
           </GridContainer>
           <GridContainer justify="center">
-            <GridItem xs={12} sm={12} md={12}>
+            <GridItem xs={12} sm={12} md={4}>
               <TeamCard
                 pic={LydiaPic}
                 name={contentJson?.Lydia.name}
