@@ -52,8 +52,7 @@ export default function TeamSection() {
                   Meik is a Software & Solution Engineer from Buffalo NY. He has
                   always been focused on building communities and used his
                   technical skills to bridge the gap between artists and fans
-                  during the pandemic through broadcast technology. He is a
-                  musician, a board-gamer, and k-drama binge-watcher.
+                  during the pandemic through broadcast technology.
                 </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
