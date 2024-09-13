@@ -43,36 +43,6 @@ export const AboutUsSection = (props) => {
       <Typography className={classes.description}>
         {contentJson?.SectionTop.body}
       </Typography>
-      <Grid
-        container
-        justify='center'
-        alignItems='center'
-        direction='column'
-        spacing={3}>
-        <Grid item xs>
-          <AboutUsCard
-            title={contentJson?.CenterTop.title}
-            body={contentJson?.CenterTop.body}
-          />
-        </Grid>
-        <Grid item xs>
-          <AboutUsCard
-            title={contentJson?.LeftBottom.title}
-            body={contentJson?.LeftBottom.body}
-          />
-        </Grid>
-        <Grid item xs>
-          <ButtonBase
-            onClick={() => {
-              executeScroll(scrollRef)
-            }}>
-            <AboutUsCard
-              title={contentJson?.RightBottom.title}
-              body={contentJson?.RightBottom.body}
-            />
-          </ButtonBase>
-        </Grid>
-      </Grid>
     </div>
   )
 }
