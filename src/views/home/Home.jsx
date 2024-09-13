@@ -87,9 +87,6 @@ export const Home = () => {
 
       <Container>
         <Grid container direction='column'>
-          <Grid item xs ref={servicesRef}>
-            <ServicesSection />
-          </Grid>
           {/* <br ref={recentWorkRef} />
           <br /> */}
           {/* <Grid item xs container>
