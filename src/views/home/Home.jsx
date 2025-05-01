@@ -92,12 +92,12 @@ export const Home = () => {
           {/* <Grid item xs container>
             <RecentWorkSection />
           </Grid> */}
-          <Grid item xs ref={aboutUsRef}>
+{/*           <Grid item xs ref={aboutUsRef}>
             <AboutUsSection scrollRef={contactRef} />
           </Grid>
           <Grid item xs ref={teamRef}>
             <TeamSection />
-          </Grid>
+          </Grid> */}
           <Grid item xs ref={contactRef}>
             <ContactSection />
           </Grid>
