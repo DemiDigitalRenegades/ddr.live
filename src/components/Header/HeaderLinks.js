@@ -44,17 +44,19 @@ export const HeaderLinks = (props) => {
 
   return (
     <List className={classes.list}>
-      
-      // <ListItem className={classes.listItem}>
-      //   <Button
-      //     color='transparent'
-      //     onClick={() => {
-      //       executeScroll(servicesRef)
-      //     }}
-      //     className={classes.navLink}>
-      //     Our Services
-      //   </Button>
-      // </ListItem>
+      {/* 
+      <ListItem className={classes.listItem}>
+        <Button
+          color='transparent'
+          onClick={() => {
+            executeScroll(servicesRef)
+          }}
+          className={classes.navLink}>
+          Our Services
+        </Button>
+      </ListItem>
+      */}
+
       {recentWorkRef && (
         <ListItem className={classes.listItem}>
           <Button
@@ -67,27 +69,31 @@ export const HeaderLinks = (props) => {
           </Button>
         </ListItem>
       )}
-      
-      // <ListItem className={classes.listItem}>
-      //   <Button
-      //     color='transparent'
-      //     onClick={() => {
-      //       executeScroll(aboutUsRef)
-      //     }}
-      //     className={classes.navLink}>
-      //     About Us
-      //   </Button>
-      // </ListItem>
-      // <ListItem className={classes.listItem}>
-      //   <Button
-      //     color='transparent'
-      //     onClick={() => {
-      //       executeScroll(teamRef)
-      //     }}
-      //     className={classes.navLink}>
-      //     Meet the Team
-      //   </Button>
-      // </ListItem>
+
+      {/* 
+      <ListItem className={classes.listItem}>
+        <Button
+          color='transparent'
+          onClick={() => {
+            executeScroll(aboutUsRef)
+          }}
+          className={classes.navLink}>
+          About Us
+        </Button>
+      </ListItem>
+
+      <ListItem className={classes.listItem}>
+        <Button
+          color='transparent'
+          onClick={() => {
+            executeScroll(teamRef)
+          }}
+          className={classes.navLink}>
+          Meet the Team
+        </Button>
+      </ListItem>
+      */}
+
       <ListItem className={classes.listItem}>
         <Button
           color='transparent'
@@ -98,6 +104,7 @@ export const HeaderLinks = (props) => {
           Contact Us
         </Button>
       </ListItem>
+
       {showVod && (
         <ListItem className={classes.listItem}>
           <Button
@@ -110,22 +117,24 @@ export const HeaderLinks = (props) => {
           </Button>
         </ListItem>
       )}
-      // <ListItem className={classes.listItem}>
-      //   <Tooltip
-      //     id='instagram-tooltip'
-      //     title='Follow us on Instagram'
-      //     placement={window.innerWidth > 959 ? 'top' : 'left'}
-      //     classes={{ tooltip: classes.tooltip }}>
-      //     <Button
-      //       color='transparent'
-      //       href='https://www.instagram.com/ddr_live/'
-      //       target='_blank'
-      //       className={classes.navLink}>
-      //       <InstagramIcon />
-      //     </Button>
-      //   </Tooltip>
-      // </ListItem>
-      
+
+      {/* 
+      <ListItem className={classes.listItem}>
+        <Tooltip
+          id='instagram-tooltip'
+          title='Follow us on Instagram'
+          placement={window.innerWidth > 959 ? 'top' : 'left'}
+          classes={{ tooltip: classes.tooltip }}>
+          <Button
+            color='transparent'
+            href='https://www.instagram.com/ddr_live/'
+            target='_blank'
+            className={classes.navLink}>
+            <InstagramIcon />
+          </Button>
+        </Tooltip>
+      </ListItem>
+      */}
     </List>
   )
 }
