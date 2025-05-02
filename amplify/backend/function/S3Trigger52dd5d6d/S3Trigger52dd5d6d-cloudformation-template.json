@@ -62,7 +62,7 @@
             "Arn"
           ]
         },
-        "Runtime": "nodejs12.x",
+        "Runtime": "nodejs18.x",
         "Timeout": "25",
         "Layers": [
           "arn:aws:lambda:us-east-1:482304656615:layer:YamltoJSON:1"
