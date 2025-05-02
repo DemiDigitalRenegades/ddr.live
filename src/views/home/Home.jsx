@@ -39,12 +39,12 @@ export const Home = () => {
         rightLinks={
           <HeaderLinks
             executeScroll={executeScroll}
-            servicesRef={servicesRef}
+            // servicesRef={servicesRef}
             // recentWorkRef={recentWorkRef}
-            aboutUsRef={aboutUsRef}
-            teamRef={teamRef}
+            // aboutUsRef={aboutUsRef}
+            // teamRef={teamRef}
             contactRef={contactRef}
-            showVod={true}
+            showVod={false}
           />
         }
       />
