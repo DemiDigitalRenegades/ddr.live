@@ -86,12 +86,14 @@ export const ContactSection = () => {
       <GridContainer justify='center'>
         <GridItem cs={12} sm={12} md={8}>
           <h2 className={classes.title}>Work with us</h2>
+               {/* 
           <h4 className={classes.description}>
             Let's get your production off the ground! Drop us a line and we'll
             get back you ASAP. Be it a price quote, an in-depth technical
             question, or just a quick contact exchange, this form will have you
             covered.
           </h4>
+               */}
           <form>
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
