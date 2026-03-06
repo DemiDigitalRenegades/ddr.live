@@ -9,11 +9,11 @@ import {
 } from '@material-ui/core'
 import Header from 'components/Header/Header'
 import { HeaderLinks } from 'components/Header/HeaderLinks'
-import { AboutUsSection } from './Sections/AboutUsSection'
+// import { AboutUsSection } from './Sections/AboutUsSection'
 // import { RecentWorkSection } from './Sections/RecentWorkSection'
-import { ServicesSection } from './Sections/ServicesSection'
+// import { ServicesSection } from './Sections/ServicesSection'
 import { ContactSection } from './Sections/ContactSection'
-import { TeamSection } from './Sections/TeamSection'
+// import { TeamSection } from './Sections/TeamSection'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 
 export const Home = () => {
@@ -75,7 +75,7 @@ export const Home = () => {
             <Grid item xs>
               <IconButton
                 color='primary'
-                onClick={() => executeScroll(servicesRef)}>
+                onClick={() => executeScroll(contactRef)}>
                 <Slide in direction={'up'} timeout={{ enter: 2000 }}>
                   <ExpandMoreIcon fontSize='large' />
                 </Slide>

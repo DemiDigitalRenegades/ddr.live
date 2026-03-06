@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles'
 import { FormHelperText } from '@material-ui/core'
-
-// @material-ui/icons
 
 // core components
 import GridContainer from 'components/Grid/GridContainer.js'
@@ -12,7 +10,6 @@ import CustomInput from 'components/CustomInput/CustomInput.js'
 import Button from 'components/CustomButtons/Button.js'
 
 import styles from 'assets/jss/material-kit-react/views/landingPageSections/workStyle.js'
-import { API } from 'aws-amplify'
 
 const useStyles = makeStyles(styles)
 
@@ -28,73 +25,50 @@ export const ContactSection = () => {
   const [formError, setFormError] = useState(false)
   const [formSuccess, setFormSuccess] = useState(false)
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault()
     if (name === '' || email === '' || message === '' || subject === '') {
-      console.log('Please enter all values. Message not sent.')
       setFormError(true)
-    } else {
-      setSending(true)
-      setFormError(false)
-      const apiName = 'contactEmailer'
-      const path = '/'
-      const payload = {
-        body: {
-          toEmails: ['contact@ddr.live'],
-          subject: subject + ' - ' + name + ' - ' + email,
-          message: message,
-        },
-      }
-
-      await API.post(apiName, path, payload)
-        .then((resp) => {
-          console.log(resp)
-          console.log('Message Sent')
-          clearForm()
-          setFormSuccess(true)
-        })
-        .catch((error) => {
-          console.log(error.response)
-        })
-      setSending(false)
+      setTimeout(() => setFormError(false), FORM_MESSAGE_TIMEOUT)
+      return
     }
+
+    setSending(true)
+    setFormError(false)
+
+    try {
+      const response = await fetch('https://formspree.io/f/xdakvkzq', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          subject,
+          message,
+        }),
+      })
+
+      if (response.ok) {
+        setName('')
+        setEmail('')
+        setMessage('')
+        setSubject('')
+        setFormSuccess(true)
+        setTimeout(() => setFormSuccess(false), FORM_MESSAGE_TIMEOUT)
+      }
+    } catch (error) {
+      console.log(error)
+    }
+
+    setSending(false)
   }
-
-  const clearForm = () => {
-    setName('')
-    setEmail('')
-    setMessage('')
-    setSubject('')
-    console.log('clearing inputs')
-  }
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setFormError(false)
-    }, FORM_MESSAGE_TIMEOUT)
-    return () => clearTimeout(timer)
-  })
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setFormSuccess(false)
-    }, FORM_MESSAGE_TIMEOUT)
-    return () => clearTimeout(timer)
-  })
 
   return (
     <div className={classes.section}>
       <GridContainer justify='center'>
         <GridItem cs={12} sm={12} md={8}>
           <h2 className={classes.title}>Work with us</h2>
-               {/* 
-          <h4 className={classes.description}>
-            Let's get your production off the ground! Drop us a line and we'll
-            get back you ASAP. Be it a price quote, an in-depth technical
-            question, or just a quick contact exchange, this form will have you
-            covered.
-          </h4>
-               */}
-          <form>
+          <form onSubmit={handleSubmit}>
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
                 <CustomInput
@@ -106,6 +80,7 @@ export const ContactSection = () => {
                   }}
                   inputProps={{
                     required: true,
+                    name: 'name',
                     onChange: (e) => setName(e.target.value),
                   }}
                 />
@@ -120,6 +95,7 @@ export const ContactSection = () => {
                   }}
                   inputProps={{
                     required: true,
+                    name: 'email',
                     onChange: (e) => setEmail(e.target.value),
                   }}
                 />
@@ -134,6 +110,7 @@ export const ContactSection = () => {
                 }}
                 inputProps={{
                   required: true,
+                  name: 'subject',
                   rows: 5,
                   onChange: (e) => setSubject(e.target.value),
                 }}
@@ -148,6 +125,7 @@ export const ContactSection = () => {
                 }}
                 inputProps={{
                   required: true,
+                  name: 'message',
                   multiline: true,
                   rows: 5,
                   onChange: (e) => setMessage(e.target.value),
@@ -156,7 +134,7 @@ export const ContactSection = () => {
               <GridItem xs={12} sm={12} md={4}>
                 <Button
                   color='primary'
-                  onClick={handleSubmit}
+                  type='submit'
                   disabled={isSending}>
                   Send Message
                 </Button>
